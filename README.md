@@ -28,3 +28,23 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## 100% Semantic UI Support
+
+|    Elements     |   Collections   |      Views      |     Modules     |     Behaviors      |
+|-----------------|-----------------|-----------------|-----------------|--------------------|
+| ✓ Button        |  Breadcrumb    |  Advertisement | ✓ Accordion     |   Form Validation  |
+|  Container     |  Form          |  Card          | ✓ Checkbox      | *API (NA)*         |
+|  Divider       |  Grid          |  Comment       |  Dimmer        |  Visibility       |
+|  Flag          |  Menu          |  Feed          |  Dropdown      |                    |
+|  Header        |  Message       |  Item          |  Embed         |                    |
+|  Icon          |  Table         |  Statistic     |  Modal         |                    |
+|  Image         |                 |                 |  Popup         |                    |
+|  Input         |                 |                 |  Progress      |                    |
+|  Label         |                 |                 |  Rating        |                    |
+|  List          |                 |                 |  Search        |                    |
+|  Loader        |                 |                 |   Shape         |                    |
+|  Rail          |                 |                 |  Sidebar       |                    |
+|  Reveal        |                 |                 |  Sticky        |                    |
+|  Segment       |                 |                 |  Tab           |                    |
+|  Step          |                 |                 |  Transition    |                    |
