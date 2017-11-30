@@ -13,7 +13,7 @@ export default {
   name: 'hello',
   data () {
     return {
-
+      asd: false
     }
   },
   methods: {

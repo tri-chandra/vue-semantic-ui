@@ -2,33 +2,17 @@
   <div class="pusher">
     <div style="display:flex; flex-direction: row;">
       <sui-menu inverted class="vertical">
-        <div class="item">
-          <div class="header">Products</div>
+        <div v-for="menu in menuItems" :key="menu.text" class="item">
+          <div class="header">{{menu.text}}</div>
           <div class="menu">
-            <a class="item">Enterprise</a>
-            <a class="item">Consumer</a>
-          </div>
-        </div>
-        <div class="item">
-          <div class="header">CMS Solutions</div>
-          <div class="menu">
-            <a class="item">Rails</a>
-            <a class="item">Python</a>
-            <a class="item">PHP</a>
-          </div>
-        </div>
-        <div class="item">
-          <div class="header">Hosting</div>
-          <div class="menu">
-            <a class="item">Shared</a>
-            <a class="item">Dedicated</a>
-          </div>
-        </div>
-        <div class="item">
-          <div class="header">Support</div>
-          <div class="menu">
-            <a class="item">E-mail Support</a>
-            <a class="item">FAQs</a>
+            <a
+              v-for="submenu in menu.children"
+              :key="submenu"
+              class="item"
+              :href="'#/'+menu.text.toLowerCase()+'/'+submenu.toLowerCase()"
+              >
+              {{submenu}}
+            </a>
           </div>
         </div>
       </sui-menu>
@@ -42,6 +26,55 @@
 
 <script>
 export default {
-  name: 'WikiFrame'
+  name: 'WikiFrame',
+  data()   {
+    return {
+      menuItems: [
+        {
+          text: 'UI Docs'
+        },
+        {
+          text: 'Getting Started'
+        },
+        {
+          text: 'Introduction',
+          children: [
+            'Integration',
+            'Build Tools',
+            'Recipes',
+            'Glossary'
+          ]
+        },
+        {
+          text: 'Usage',
+          children: [
+            'Theming',
+            'Layouts'
+          ]
+        },
+        {
+          text: 'Modules',
+          children: [
+            'Accordion',
+            'Checkbox',
+            'Dimmer',
+            'Dropdown',
+            'Embed',
+            'Modal',
+            'Nag',
+            'Popup',
+            'Progress',
+            'Rating',
+            'Search',
+            'Shape',
+            'Sidebar',
+            'Sticky',
+            'Tab',
+            'Transition'
+          ]
+        }
+      ]
+    }
+  }
 }
 </script>
