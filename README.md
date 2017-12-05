@@ -33,18 +33,18 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 |    Elements     |   Collections   |      Views      |     Modules     |     Behaviors      |
 |-----------------|-----------------|-----------------|-----------------|--------------------|
-| ✓ Button        |  Breadcrumb    |  Advertisement | ✓ Accordion     |   Form Validation  |
-|  Container     |  Form          |  Card          | ✓ Checkbox      | *API (NA)*         |
-|  Divider       |  Grid          |  Comment       |  Dimmer        |  Visibility       |
-|  Flag          |  Menu          |  Feed          |  Dropdown      |                    |
-|  Header        |  Message       |  Item          |  Embed         |                    |
-|  Icon          |  Table         |  Statistic     |  Modal         |                    |
-|  Image         |                 |                 |  Popup         |                    |
-|  Input         |                 |                 |  Progress      |                    |
-|  Label         |                 |                 |  Rating        |                    |
-|  List          |                 |                 |  Search        |                    |
-|  Loader        |                 |                 |   Shape         |                    |
-|  Rail          |                 |                 |  Sidebar       |                    |
-|  Reveal        |                 |                 |  Sticky        |                    |
-|  Segment       |                 |                 |  Tab           |                    |
-|  Step          |                 |                 |  Transition    |                    |
+| ✔ Button        | 🚧 Breadcrumb    | 🚧 Advertisement | ✔ Accordion     | 🚧 Form Validation  |
+| 🚧 Container     | 🚧 Form          | 🚧 Card          | ✔ Checkbox      | 🤞 API              |
+| 🚧 Divider       | 🚧 Grid          | 🚧 Comment       | ✔ Dimmer        | 🚧 Visibility       |
+| 🚧 Flag          | 🚧 Menu          | 🚧 Feed          | 🚧 Dropdown      |                    |
+| 🚧 Header        | 🚧 Message       | 🚧 Item          | 🚧 Embed         |                    |
+| 🚧 Icon          | 🚧 Table         | 🚧 Statistic     | 🚧 Modal         |                    |
+| 🚧 Image         |                 |                 | 🚧 Popup         |                    |
+| 🚧 Input         |                 |                 | 🚧 Progress      |                    |
+| 🚧 Label         |                 |                 | 🚧 Rating        |                    |
+| 🚧 List          |                 |                 | 🚧 Search        |                    |
+| 🚧 Loader        |                 |                 | 🚧 Shape         |                    |
+| 🚧 Rail          |                 |                 | 🚧 Sidebar       |                    |
+| 🚧 Reveal        |                 |                 | 🚧 Sticky        |                    |
+| 🚧 Segment       |                 |                 | 🚧 Tab           |                    |
+| 🚧 Step          |                 |                 | 🚧 Transition    |                    |
