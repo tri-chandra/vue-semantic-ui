@@ -1,6 +1,8 @@
 <template>
   <div :class="classList">
-    <div class="ui simple dimmer"></div>
+    <div :class="subClassList">
+      <slot name="content" />
+    </div>
       <slot></slot>
     </div>
   </div>
@@ -9,16 +11,26 @@
 <script>
 export default {
   props: {
-    value: Boolean
+    value: Boolean,
+    blurring: Boolean,
+    inverted: Boolean
   },
   computed: {
     classList() {
-      var retVal = ['ui']
+      let retVal = ['ui']
 
       if (this.value) {
         retVal.push('dimmable')
         retVal.push('dimmed')
       }
+      if (this.blurring) retVal.push('blurring')
+
+      return retVal
+    },
+    subClassList() {
+      let retVal = ['ui', 'simple', 'dimmer']
+
+      if (this.inverted) retVal.push('inverted')
 
       return retVal
     }
