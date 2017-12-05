@@ -24,7 +24,9 @@ export default {
         if (this.exclusive) {
           var retVal = []
           var trueCount = 0
+          var valTrueCount = 0
           for (let idx in val) {
+            if (!!val[idx] === true) valTrueCount++
             if (!!this.modelCache[idx] === !!val[idx]) {
               retVal.push(false)
             } else {
@@ -33,7 +35,14 @@ export default {
             }
           }
 
-          if (trueCount > 0) {
+          if (valTrueCount === 0) {
+            this.modelCache = []
+            for (let idx in val) {
+              this.modelCache.push(val[idx])
+            }
+
+            this.$emit('input', val)
+          } else if (trueCount > 0) {
             this.modelCache = []
             for (let idx in retVal) {
               this.modelCache.push(retVal[idx])
