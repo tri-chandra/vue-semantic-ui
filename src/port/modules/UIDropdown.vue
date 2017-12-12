@@ -1,9 +1,15 @@
 <template>
-  <div :class="classList" @click="onclick" @mousedown.stop="doNothing">
+  <div :class="classList" @click="onComboExpand" @mousedown.stop="doNothing">
     <input type="hidden" :value="selectedValue.value" :name="dataName" />
     <input v-if="search" v-model="searchValue" class="search" autocomplete="off" tabindex="0" />
-    <div :class="{text: true, default: selection && !selectedValue.value}">{{ displayValue }}</div>
-    <i class="dropdown icon" />
+    <div
+      :class="{
+        text: true,
+        default: selection && !selectedValue.value,
+        filtered:search && searchValue}">
+      {{ displayValue }}
+    </div>
+    <i class="dropdown icon" @click.stop="onclick" />
     <div :class="menuClass" v-bind:style="styling">
       <slot></slot>
     </div>
@@ -92,7 +98,6 @@ export default {
       }
     },
     searchValue(val) {
-      console.log('Searching: '+val)
       let filtered = this.$slots.default.filter(
         (item) => {
           return item.tag &&
@@ -102,6 +107,17 @@ export default {
       for (let idx in filtered) {
         let item = filtered[idx]
         item.elm.classList.value = 'item filtered'
+      }
+
+      let others = this.$slots.default.filter(
+        (item) => {
+          return item.tag &&
+          item.elm.textContent.toLowerCase().indexOf(val.toLowerCase()) >= 0
+        }
+      )
+      for (let idx in others) {
+        let item = others[idx]
+        item.elm.classList.value = 'item'
       }
     }
   },
@@ -127,7 +143,10 @@ export default {
         this.selectedValue = val
       }
     },
-    onComboCancel(e) {
+    onComboExpand() {
+      this.isCollapsed = false
+    },
+    onComboCancel() {
       this.isCollapsed = true
     },
     doNothing() {
