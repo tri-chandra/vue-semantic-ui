@@ -1,7 +1,7 @@
 <template>
-  <div :class="classList" @click="onclick">
+  <div :class="classList" @click="onclick" @mousedown.stop="doNothing">
     <input type="hidden" :value="selectedValue.value" :name="dataName" />
-    <input v-if="search" class="search" autocomplete="off" tabindex="0" />
+    <input v-if="search" v-model="searchValue" class="search" autocomplete="off" tabindex="0" />
     <div :class="{text: true, default: selection && !selectedValue.value}">{{ displayValue }}</div>
     <i class="dropdown icon" />
     <div :class="menuClass" v-bind:style="styling">
@@ -29,6 +29,7 @@ export default {
   data() {
     return {
       selectedValue: '',
+      searchValue: '',
       isCollapsed: true,
       menuClass: ['menu', 'transition', 'hidden'],
       styling: {}
@@ -36,7 +37,14 @@ export default {
   },
   computed: {
     classList() {
-      let retVal = ['ui', 'dropdown', 'active', 'visible']
+      let retVal
+      const activeDropdownStyle = ['ui', 'dropdown', 'active', 'visible']
+      const inactiveDropdownStyle = ['ui', 'dropdown']
+      if (this.isCollapsed) {
+        retVal = inactiveDropdownStyle
+      } else {
+        retVal = activeDropdownStyle
+      }
 
       if (this.search) {
         retVal.splice(1, 0, 'search')
@@ -82,20 +90,32 @@ export default {
           vm.styling = false
         }, vm.animationDuration)
       }
+    },
+    searchValue(val) {
+      console.log('Searching: '+val)
+      let filtered = this.$slots.default.filter(
+        (item) => {
+          return item.tag &&
+          item.elm.textContent.toLowerCase().indexOf(val.toLowerCase()) < 0
+        }
+      )
+      for (let idx in filtered) {
+        let item = filtered[idx]
+        item.elm.classList.value = 'item filtered'
+      }
     }
   },
   created() {
+    let vm = this
+    document.addEventListener('mousedown', this.onComboCancel)
+
     this.$on('changed', this.onSelect)
     this.selectedValue = this.value
   },
-  mounted() {
-    let filtered = this.$slots.default.filter((item) => {return item.tag && item.elm.textContent.startsWith('G') })
-    for (let idx in filtered) {
-      let item = filtered[idx]
-      item.elm.classList.value = 'item filtered'
-    }
-  },
   beforeDestroy() {
+    let vm = this
+    document.removeEventListener('mousedown', this.onComboCancel)
+
     this.$off('changed', this.onSelect)
   },
   methods: {
@@ -106,6 +126,12 @@ export default {
       if(val) {
         this.selectedValue = val
       }
+    },
+    onComboCancel(e) {
+      this.isCollapsed = true
+    },
+    doNothing() {
+
     }
   }
 }

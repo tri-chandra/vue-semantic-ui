@@ -2,9 +2,9 @@
 export default {
   props: {
     value: {
-      type: [Object, Boolean, String],
-      required: true
-    }
+      type: [Object, Boolean, String]
+    },
+    description: String
   },
   data() {
     return {
@@ -20,6 +20,19 @@ export default {
     }
   },
   render(h) {
+    let children = this.$slots.default
+    if (this.description) {
+      children.splice(0, 0,
+        h(
+          'span',
+          {
+            'class': ['description']
+          },
+          this.description
+        )
+      )
+    }
+
     return h('div',
     {
       'class': ['item'],
