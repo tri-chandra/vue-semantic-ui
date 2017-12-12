@@ -89,17 +89,10 @@ export default {
     this.selectedValue = this.value
   },
   mounted() {
-    let x = 0
-    for (let idx in this.$slots.default) {
-      if (this.$slots.default[idx].tag) {
-        x++
-        let item = this.$slots.default[idx]
-        if (x%2 == 0) {
-          item.elm.classList.value = 'item filtered'
-        }
-        console.log(item.elm.classList)
-        console.log(x)
-      }
+    let filtered = this.$slots.default.filter((item) => {return item.tag && item.elm.textContent.startsWith('G') })
+    for (let idx in filtered) {
+      let item = filtered[idx]
+      item.elm.classList.value = 'item filtered'
     }
   },
   beforeDestroy() {
@@ -108,7 +101,6 @@ export default {
   methods: {
     onclick() {
       this.isCollapsed = !this.isCollapsed
-      console.log(this)
     },
     onSelect(val) {
       if(val) {
