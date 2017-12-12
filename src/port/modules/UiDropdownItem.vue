@@ -25,9 +25,6 @@ export default {
       'class': ['item'],
       on: {
           click: this.onClick
-      },
-      mounted() {
-        alert('q')
       }
     },
     this.$slots.default)
