@@ -18,8 +18,6 @@ export default {
         text: this.$el.textContent
       })
 
-      this.$el.classList.value = 'item active selected'
-
       event.stopPropagation()
     }
   },

@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import Vue from 'vue'
+
 export default {
   props: {
     value: Boolean,
@@ -74,6 +76,9 @@ export default {
     }
   },
   watch: {
+    selectedValue(val) {
+      this.highlight(val.value)
+    },
     isCollapsed(val) {
       if (val) {
         this.menuClass = ['menu', 'animating', 'transition', 'slide', 'down', 'out']
@@ -88,6 +93,9 @@ export default {
           vm.styling = false
         }, vm.animationDuration)
       } else {
+        var event = new CustomEvent('mousedown', {detail: this})
+        document.dispatchEvent(event)
+
         this.menuClass = ['menu', 'animating', 'transition', 'slide', 'down', 'in']
         this.styling = {
           display: 'block !important',
@@ -108,9 +116,10 @@ export default {
           item.elm.textContent.toLowerCase().indexOf(val.toLowerCase()) >= 0
         }
       )
+
       for (let idx in others) {
         let item = others[idx]
-        item.elm.classList.value = 'item'
+        item.elm.classList.remove('filtered')
       }
 
       let filtered = this.$slots.default.filter(
@@ -121,20 +130,19 @@ export default {
       )
       for (let idx in filtered) {
         let item = filtered[idx]
-        item.elm.classList.value = 'item filtered'
+        item.elm.classList.add('filtered')
       }
     }
   },
   created() {
-    let vm = this
-    document.addEventListener('mousedown', this.onComboCancel)
+    document.addEventListener('mousedown', this.onComboCollapsed)
 
     this.$on('changed', this.onSelect)
     this.selectedValue = this.value
   },
   beforeDestroy() {
     let vm = this
-    document.removeEventListener('mousedown', this.onComboCancel)
+    document.removeEventListener('mousedown', this.onComboCollapsed)
 
     this.$off('changed', this.onSelect)
   },
@@ -143,37 +151,61 @@ export default {
       this.isCollapsed = !this.isCollapsed
     },
     highlight(val) {
-      let filtered = this.$slots.default.filter(
+      let items = this.$slots.default.filter(
         (item) => {
-          return item.tag &&
-          item.elm.classList.value === 'item active selected'
+          return item.tag
+        }
+      )
+      for (let idx in items) {
+        let item = items[idx]
+        item.elm.classList.remove('active')
+        item.elm.classList.remove('selected')
+      }
+
+      let filtered = items.filter(
+        (item) => {
+          return item.componentOptions.propsData.value === val
         }
       )
       for (let idx in filtered) {
         let item = filtered[idx]
-        console.log(item)
-        if (item.componentOptions.propsData.value !== val) {
-          item.elm.classList.value = 'item'
-        }
+        item.elm.classList.add('active')
+        item.elm.classList.add('selected')
       }
     },
     onSelect(val) {
       if(val) {
         this.selectedValue = val
-
-        this.highlight(val)
       }
-      this.onComboCancel()
+      this.onComboCollapsed()
     },
     onComboExpand() {
       this.isCollapsed = false
     },
-    onComboCancel() {
-      this.isCollapsed = true
+    onComboCollapsed(doNotCollapse) {
+      if (!doNotCollapse || this._uid != doNotCollapse.detail._uid) {
+        this.isCollapsed = true
 
-      if (this.search && this.searchValue) {
+        if (this.search && this.searchValue) {
+          let vm = this
+          Vue.nextTick().then(() => {
+            let result = vm.$slots.default.filter(
+              (item) => {
+                return item.tag &&
+                item.elm.textContent.toLowerCase().indexOf(vm.searchValue.toLowerCase()) >= 0
+              }
+            )
 
-        this.searchValue = ''
+            if (result.length > 0) {
+              vm.selectedValue = {
+                value: result[0].componentOptions.propsData.value,
+                text: result[0].elm.textContent
+              }
+            }
+
+            vm.searchValue = ''
+          })
+        }
       }
     },
     doNothing() {
