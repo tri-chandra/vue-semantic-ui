@@ -30,7 +30,8 @@ export default {
     animationDuration: {
       type: Number,
       default: 200
-    }
+    },
+    fluid: Boolean
   },
   data() {
     return {
@@ -52,6 +53,9 @@ export default {
         retVal = activeDropdownStyle
       }
 
+      if (this.fluid) {
+        retVal.splice(1, 0, 'fluid')
+      }
       if (this.search) {
         retVal.splice(1, 0, 'search')
       }
@@ -98,17 +102,6 @@ export default {
       }
     },
     searchValue(val) {
-      let filtered = this.$slots.default.filter(
-        (item) => {
-          return item.tag &&
-          item.elm.textContent.toLowerCase().indexOf(val.toLowerCase()) < 0
-        }
-      )
-      for (let idx in filtered) {
-        let item = filtered[idx]
-        item.elm.classList.value = 'item filtered'
-      }
-
       let others = this.$slots.default.filter(
         (item) => {
           return item.tag &&
@@ -118,6 +111,17 @@ export default {
       for (let idx in others) {
         let item = others[idx]
         item.elm.classList.value = 'item'
+      }
+
+      let filtered = this.$slots.default.filter(
+        (item) => {
+          return item.tag &&
+          item.elm.textContent.toLowerCase().indexOf(val.toLowerCase()) < 0
+        }
+      )
+      for (let idx in filtered) {
+        let item = filtered[idx]
+        item.elm.classList.value = 'item filtered'
       }
     }
   },
@@ -138,16 +142,39 @@ export default {
     onclick() {
       this.isCollapsed = !this.isCollapsed
     },
+    highlight(val) {
+      let filtered = this.$slots.default.filter(
+        (item) => {
+          return item.tag &&
+          item.elm.classList.value === 'item active selected'
+        }
+      )
+      for (let idx in filtered) {
+        let item = filtered[idx]
+        console.log(item)
+        if (item.componentOptions.propsData.value !== val) {
+          item.elm.classList.value = 'item'
+        }
+      }
+    },
     onSelect(val) {
       if(val) {
         this.selectedValue = val
+
+        this.highlight(val)
       }
+      this.onComboCancel()
     },
     onComboExpand() {
       this.isCollapsed = false
     },
     onComboCancel() {
       this.isCollapsed = true
+
+      if (this.search && this.searchValue) {
+
+        this.searchValue = ''
+      }
     },
     doNothing() {
 

@@ -9,7 +9,7 @@
 
       <sui-header h4>Dropdown</sui-header>
       <p>A dropdown</p>
-      <sui-dropdown defaultText="File">
+      <sui-dropdown default-text="File">
         <sui-dropdown-item>New</sui-dropdown-item>
         <sui-dropdown-item description="ctrl + o">Open...</sui-dropdown-item>
 
@@ -18,6 +18,14 @@
 
       <sui-header h4>Selection</sui-header>
       <p>A dropdown can be used to select between choices in a form</p>
+      <sui-dropdown selection default-text="Gender">
+        <sui-dropdown-item value="1">Male</sui-dropdown-item>
+        <sui-dropdown-item value="0">Female</sui-dropdown-item>
+      </sui-dropdown>
+      <sui-dropdown fluid selection default-text="Gender">
+        <sui-dropdown-item value="1">Male</sui-dropdown-item>
+        <sui-dropdown-item value="0">Female</sui-dropdown-item>
+      </sui-dropdown>
 
       <sui-header h4>Search Selection</sui-header>
       <p>A selection dropdown can allow a user to search through a large list of choices.</p>

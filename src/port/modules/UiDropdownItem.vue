@@ -12,11 +12,15 @@ export default {
     }
   },
   methods: {
-    onClick() {
+    onClick(event) {
       this.$parent.$emit('changed', {
         value: this.value,
         text: this.$el.textContent
       })
+
+      this.$el.classList.value = 'item active selected'
+
+      event.stopPropagation()
     }
   },
   render(h) {
