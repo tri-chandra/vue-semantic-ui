@@ -1,7 +1,11 @@
 <template>
   <div :class="classList" @click="onComboExpand" @mousedown.stop="doNothing">
-    <input type="hidden" :value="selectedValue.value" :name="dataName" />
+    <input v-if="!multiple" type="hidden" :value="selectedValue.value" :name="dataName" />
+    <select v-else multiple :value="selectedValue.value">
+    </select>
+
     <input v-if="search" v-model="searchValue" class="search" autocomplete="off" tabindex="0" />
+
     <div
       :class="{
         text: true,
@@ -10,6 +14,16 @@
       {{ displayValue }}
     </div>
     <i class="dropdown icon" @click.stop="onclick" />
+
+    <a
+      v-if="multiple"
+      class="ui label transition visible"
+      data-value="AL"
+      style="display: inline-block !important;">
+      Alabama
+      <i class="delete icon"></i>
+    </a>
+
     <div :class="menuClass" v-bind:style="styling">
       <slot></slot>
     </div>
@@ -23,6 +37,7 @@ export default {
   props: {
     value: Boolean,
     search: Boolean,
+    multiple: Boolean,
     selection: Boolean,
     defaultText: {
       type: String,
@@ -171,6 +186,7 @@ export default {
         let item = filtered[idx]
         item.elm.classList.add('active')
         item.elm.classList.add('selected')
+        // item.elm.classList.add('filtered')
       }
     },
     onSelect(val) {
