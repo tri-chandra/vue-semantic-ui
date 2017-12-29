@@ -5,25 +5,27 @@
     <input v-else type="hidden" :value="selectedValues" :name="formName" />
 
     <!-- display elements -->
-    <a
-      v-if="multiple"
-      v-for="item in selectedValues.length" :key="item"
-      class="ui label transition visible"
-      :data-value="selectedValues[item-1]"
-      style="display: inline-block !important;">
-      {{selectedText[item-1]}}
-      <i class="delete icon" @click.stop="onRemoveSelection(selectedValues[item-1])"></i>
-    </a>
-    <div
-      v-else
-      :class="placeholderClass"
-      v-html="displayValue"></div>
+    <template v-if="multiple">
+      <a
+        v-for="item in selectedValues.length" :key="item"
+        class="ui label transition visible"
+        :data-value="selectedValues[item-1]"
+        style="display: inline-block !important;">
+        {{selectedText[item-1]}}
+        <i class="delete icon" @click.stop="onRemoveSelection(selectedValues[item-1])"></i>
+      </a>
+    </template>
+    <template v-else>
+      <div
+        :class="placeholderClass"
+        v-html="displayValue"></div>
+    </template>
 
     <!-- search element -->
     <input v-if="search" v-model="searchValue" class="search" autocomplete="off" tabindex="0" @click.stop="onComboExpand" />
 
     <!-- dropdown arrow -->
-    <i class="dropdown icon" @click.stop="onClick" />
+    <i :class="arrowIcon ? `${arrowIcon} icon` : 'dropdown icon'" @click.stop="onClick" />
 
     <!-- slot element -->
     <div :class="menuClass" v-bind:style="styling">
@@ -46,11 +48,15 @@ export default {
       default: 'Select Item'
     },
     formName: String,
+    arrowIcon: String,
     animationDuration: {
       type: Number,
       default: 200
     },
-    fluid: Boolean
+    fluid: Boolean,
+    labeled: Boolean,
+    icon: Boolean,
+    button: Boolean
   },
   data() {
     return {
@@ -87,6 +93,15 @@ export default {
       }
       if (this.search) {
         retVal.splice(1, 0, 'search')
+      }
+      if (this.labeled) {
+        retVal.splice(1, 0, 'labeled')
+      }
+      if (this.icon) {
+        retVal.splice(1, 0, 'icon')
+      }
+      if (this.button) {
+        retVal.splice(1, 0, 'button')
       }
       if (this.selection) {
         retVal.splice(1, 0, 'selection')

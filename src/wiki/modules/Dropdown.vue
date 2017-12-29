@@ -54,6 +54,25 @@
 
       <sui-header h4>Multiple Selection</sui-header>
       <p>A selection dropdown can allow multiple selections.</p>
+      <sui-dropdown multiple selection v-model="val5">
+        <sui-dropdown-item value="1">test1</sui-dropdown-item>
+        <sui-dropdown-item value="2">test2</sui-dropdown-item>
+        <sui-dropdown-item value="3">test3</sui-dropdown-item>
+        <sui-dropdown-item value="4"><i class="af flag"></i>Afghanistan</sui-dropdown-item>
+        <sui-dropdown-item value="5"><i class="ax flag"></i>Aland Islands</sui-dropdown-item>
+        <sui-dropdown-item value="6"><i class="al flag"></i>Albania</sui-dropdown-item>
+        <sui-dropdown-item value="7"><i class="dz flag"></i>Algeria</sui-dropdown-item>
+        <sui-dropdown-item value="8"><i class="as flag"></i>American Samoa</sui-dropdown-item>
+        <sui-dropdown-item value="ge"><i class="ge flag"></i>Georgia</sui-dropdown-item>
+        <sui-dropdown-item value="de"><i class="de flag"></i>Germany</sui-dropdown-item>
+        <sui-dropdown-item value="gh"><i class="gh flag"></i>Ghana</sui-dropdown-item>
+        <sui-dropdown-item value="gi"><i class="gi flag"></i>Gibraltar</sui-dropdown-item>
+        <sui-dropdown-item value="gr"><i class="gr flag"></i>Greece</sui-dropdown-item>
+      </sui-dropdown>
+      <input v-model="val5"/>
+
+      <sui-header h4>Multiple Search Selection</sui-header>
+      <p>A selection dropdown can allow multiple search selections.</p>
       <sui-dropdown multiple selection>
         <sui-dropdown-item value="1">test1</sui-dropdown-item>
         <sui-dropdown-item value="2">test2</sui-dropdown-item>
@@ -68,6 +87,14 @@
         <sui-dropdown-item value="gh"><i class="gh flag"></i>Ghana</sui-dropdown-item>
         <sui-dropdown-item value="gi"><i class="gi flag"></i>Gibraltar</sui-dropdown-item>
         <sui-dropdown-item value="gr"><i class="gr flag"></i>Greece</sui-dropdown-item>
+      </sui-dropdown>
+
+      <sui-header h4>Search Dropdown</sui-header>
+      <p>A dropdown can be searchable</p>
+      <sui-dropdown search labeled icon button default-text="Select Language" arrow-icon="world">
+        <sui-dropdown-item>Arabic</sui-dropdown-item>
+        <sui-dropdown-item>Chinese</sui-dropdown-item>
+        <sui-dropdown-item>Danish</sui-dropdown-item>
       </sui-dropdown>
     </sui-container>
   </div>

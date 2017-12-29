@@ -13,7 +13,7 @@
         filtered:search && searchValue}">
       {{ displayValue }}
     </div>
-    <i class="dropdown icon" @click.stop="onclick" />
+    <i :class="arrowIcon ? `${arrowIcon} icon` : 'dropdown icon'" @click.stop="onclick" />
 
     <a
       v-if="multiple"
@@ -44,11 +44,14 @@ export default {
       default: 'Select Item'
     },
     dataName: String,
+    arrowIcon: String,
     animationDuration: {
       type: Number,
       default: 200
     },
-    fluid: Boolean
+    fluid: Boolean,
+    labeled: Boolean,
+    icon: Boolean
   },
   data() {
     return {
