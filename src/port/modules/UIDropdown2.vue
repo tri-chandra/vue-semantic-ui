@@ -4,22 +4,23 @@
     <select v-if="multiple" multiple :value="selectedValues" :name="formName"></select>
     <input v-else type="hidden" :value="selectedValues" :name="formName" />
 
-    <!-- search element -->
-    <input v-if="search" v-model="searchValue" class="search" autocomplete="off" tabindex="0" @click.stop="onComboExpand" />
-
     <!-- display elements -->
     <a
       v-if="multiple"
+      v-for="item in selectedValues.length" :key="item"
       class="ui label transition visible"
-      data-value="AL"
+      :data-value="selectedValues[item-1]"
       style="display: inline-block !important;">
-      Alabama
+      {{selectedText[item-1]}}
       <i class="delete icon"></i>
     </a>
     <div
       v-else
       :class="placeholderClass"
       v-html="displayValue"></div>
+
+    <!-- search element -->
+    <input v-if="search" v-model="searchValue" class="search" autocomplete="off" tabindex="0" @click.stop="onComboExpand" />
 
     <!-- dropdown arrow -->
     <i class="dropdown icon" @click.stop="onClick" />
@@ -80,6 +81,9 @@ export default {
 
       if (this.fluid) {
         retVal.splice(1, 0, 'fluid')
+      }
+      if (this.multiple) {
+        retVal.splice(1, 0, 'multiple')
       }
       if (this.search) {
         retVal.splice(1, 0, 'search')
@@ -174,14 +178,14 @@ export default {
   },
   methods: {
     // events
-    onSelect(val) {
+    onSelect(val) {console.log('onselect')
       if(val) {
         if (!this.multiple) {
           this.clearValues()
         }
-        this.selectedValues.push(val.value)
         this.selectedDisplay.push(val.display)
         this.selectedText.push(val.text)
+        this.selectedValues.push(val.value)
 
         this.highlight()
 
@@ -195,7 +199,31 @@ export default {
     onComboCollapsed(event) {
       if (!event || this._uid != event.detail._uid) {
         this.isCollapsed = true
-        this.searchValue = ''
+
+        if (this.search && this.searchValue) {
+          let vm = this
+          let searchValue = this.searchValue
+          this.searchValue = ''
+
+          if (!this.multiple) {
+            Vue.nextTick().then(() => {
+              let result = vm.$slots.default.filter(
+                (item) => {
+                  return item.tag &&
+                  item.elm.textContent.toLowerCase().indexOf(searchValue.toLowerCase()) >= 0
+                }
+              )
+
+              if (result.length > 0) {
+                vm.onSelect({
+                  value: result[0].componentOptions.propsData.value,
+                  display: result[0].elm.innerHTML,
+                  text: result[0].elm.textContent
+                })
+              }
+            })
+          }
+        }
       }
     },
     onClick() {
@@ -207,9 +235,9 @@ export default {
 
     // functions
     clearValues() {
-      this.selectedValues = []
       this.selectedDisplay = []
       this.selectedText = []
+      this.selectedValues = []
     },
     highlight() {
       let items = this.$slots.default.filter(
