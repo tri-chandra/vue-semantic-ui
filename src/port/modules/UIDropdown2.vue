@@ -141,7 +141,7 @@ export default {
         }, vm.animationDuration)
       }
     },
-    searchValue(val) {console.log('search')
+    searchValue(val) {
       let others = this.$slots.default.filter(
         (item) => {
           return item.tag && item.elm &&
@@ -178,7 +178,7 @@ export default {
   },
   methods: {
     // events
-    onSelect(val) {console.log('onselect')
+    onSelect(val) {
       if(val) {
         if (!this.multiple) {
           this.clearValues()
