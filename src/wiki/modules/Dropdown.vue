@@ -9,27 +9,33 @@
 
       <sui-header h4>Dropdown</sui-header>
       <p>A dropdown</p>
-      <sui-dropdown default-text="File">
-        <sui-dropdown-item>New</sui-dropdown-item>
+      <sui-dropdown default-text="File" v-model="val1">
+        <sui-dropdown-item @click.native="doAlert">New</sui-dropdown-item>
         <sui-dropdown-item description="ctrl + o">Open...</sui-dropdown-item>
-
         <sui-dropdown-item>E-mail Collaborators</sui-dropdown-item>
       </sui-dropdown>
+      <input v-model="val1"/>
 
       <sui-header h4>Selection</sui-header>
       <p>A dropdown can be used to select between choices in a form</p>
-      <sui-dropdown selection default-text="Gender">
+      <sui-dropdown selection default-text="Gender" v-model="val2">
+        <sui-dropdown-item value="1">Male</sui-dropdown-item>
+        <sui-dropdown-item value="0">Female</sui-dropdown-item>
+        <sui-dropdown-item value="jenny">
+        <img class="ui mini avatar image" src="/static/img/jenny.jpg">
+          Jenny Hess
+        </sui-dropdown-item>
+      </sui-dropdown>
+      <input v-model="val2"/>
+      <sui-dropdown fluid selection default-text="Gender" v-model="val3">
         <sui-dropdown-item value="1">Male</sui-dropdown-item>
         <sui-dropdown-item value="0">Female</sui-dropdown-item>
       </sui-dropdown>
-      <sui-dropdown fluid selection default-text="Gender">
-        <sui-dropdown-item value="1">Male</sui-dropdown-item>
-        <sui-dropdown-item value="0">Female</sui-dropdown-item>
-      </sui-dropdown>
+      <input v-model="val3"/>
 
       <sui-header h4>Search Selection</sui-header>
       <p>A selection dropdown can allow a user to search through a large list of choices.</p>
-      <sui-dropdown search selection>
+      <sui-dropdown search selection v-model="val4">
         <sui-dropdown-item value="1">test1</sui-dropdown-item>
         <sui-dropdown-item value="2">test2</sui-dropdown-item>
         <sui-dropdown-item value="3">test3</sui-dropdown-item>
@@ -44,6 +50,7 @@
         <sui-dropdown-item value="gi"><i class="gi flag"></i>Gibraltar</sui-dropdown-item>
         <sui-dropdown-item value="gr"><i class="gr flag"></i>Greece</sui-dropdown-item>
       </sui-dropdown>
+      <input v-model="val4"/>
 
       <sui-header h4>Multiple Selection</sui-header>
       <p>A selection dropdown can allow multiple selections.</p>
@@ -68,7 +75,24 @@
 
 <script>
 export default {
-
+  data() {
+    return {
+      val1: [],
+      val2: [],
+      val3: [],
+      val4: [],
+      val5: [],
+      val6: [],
+      val7: [],
+      val8: [],
+      val9: []
+    }
+  },
+  methods: {
+    doAlert() {
+      alert('clicked')
+    }
+  }
 }
 </script>
 
