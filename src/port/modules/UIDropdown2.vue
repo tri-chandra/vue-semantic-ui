@@ -12,7 +12,7 @@
       :data-value="selectedValues[item-1]"
       style="display: inline-block !important;">
       {{selectedText[item-1]}}
-      <i class="delete icon"></i>
+      <i class="delete icon" @click.stop="onRemoveSelection(selectedValues[item-1])"></i>
     </a>
     <div
       v-else
@@ -229,6 +229,23 @@ export default {
     onClick() {
       this.isCollapsed = !this.isCollapsed
     },
+    onRemoveSelection(val) {
+      if(val) {
+        for (let idx in this.selectedValues) {
+          if (this.selectedValues[idx] === val) {
+            this.selectedDisplay.splice(idx, 1)
+            this.selectedText.splice(idx, 1)
+            this.selectedValues.splice(idx, 1)
+
+            this.highlight()
+
+            break;
+          }
+        }
+
+        this.$emit('input', this.selectedValues)
+      }
+    },
     doNothing() {
 
     },
@@ -249,6 +266,7 @@ export default {
         let item = items[idx]
         item.componentInstance.active = false
         item.componentInstance.selected = false
+        item.componentInstance.filtered = false
       }
 
       let filtered = items.filter(
@@ -261,18 +279,6 @@ export default {
         item.componentInstance.active = true
         item.componentInstance.selected = true
         if (this.multiple) item.componentInstance.filtered = true
-      }
-    },
-    resetFormatting() {
-      let others = this.$slots.default.filter(
-        (item) => {
-          return item.tag
-        }
-      )
-
-      for (let idx in others) {
-        let item = others[idx]
-        item.componentInstance.filtered = false
       }
     }
   }

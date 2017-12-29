@@ -54,7 +54,7 @@
 
       <sui-header h4>Multiple Selection</sui-header>
       <p>A selection dropdown can allow multiple selections.</p>
-      <sui-dropdown multiple search selection>
+      <sui-dropdown multiple selection>
         <sui-dropdown-item value="1">test1</sui-dropdown-item>
         <sui-dropdown-item value="2">test2</sui-dropdown-item>
         <sui-dropdown-item value="3">test3</sui-dropdown-item>
