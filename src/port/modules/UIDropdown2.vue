@@ -260,6 +260,7 @@ export default {
         let item = filtered[idx]
         item.componentInstance.active = true
         item.componentInstance.selected = true
+        if (this.multiple) item.componentInstance.filtered = true
       }
     },
     resetFormatting() {
