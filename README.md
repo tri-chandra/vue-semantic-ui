@@ -36,7 +36,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 | ✔ Button        | 🚧 Breadcrumb    | 🚧 Advertisement | ✔ Accordion     | 🚧 Form Validation  |
 | 🚧 Container     | 🚧 Form          | 🚧 Card          | ✔ Checkbox      | 🤞 API              |
 | 🚧 Divider       | 🚧 Grid          | 🚧 Comment       | ✔ Dimmer        | 🚧 Visibility       |
-| 🚧 Flag          | 🚧 Menu          | 🚧 Feed          | 🚧 Dropdown      |                    |
+| 🚧 Flag          | 🚧 Menu          | 🚧 Feed          | ✔🚧 Dropdown      |                    |
 | 🚧 Header        | 🚧 Message       | 🚧 Item          | 🚧 Embed         |                    |
 | 🚧 Icon          | 🚧 Table         | 🚧 Statistic     | 🚧 Modal         |                    |
 | 🚧 Image         |                 |                 | 🚧 Popup         |                    |

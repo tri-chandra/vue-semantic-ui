@@ -14,12 +14,8 @@ import UiAccordionTitle from '@/port/modules/UIAccordionTitle'
 import UiAccordionContent from '@/port/modules/UIAccordionContent'
 import UiCheckbox from '@/port/modules/UICheckbox'
 import UiDimmer from '@/port/modules/UIDimmer'
-import UiDropdown from '@/port/modules/UiDropdown'
-import UiDropdownItem from '@/port/modules/UiDropdownItem'
-
-//temporary
-import UiDropdown2 from '@/port/modules/UiDropdown2'
-import UiDropdownItem2 from '@/port/modules/UiDropdownItem2'
+import UiDropdown from '@/port/modules/UIDropdown'
+import UiDropdownItem from '@/port/modules/UIDropdownItem'
 
 export default {
   install: function(Vue, options) {
@@ -43,7 +39,7 @@ export default {
     Vue.component('SuiAccordionContent', UiAccordionContent)
     Vue.component('SuiCheckbox', UiCheckbox)
     Vue.component('SuiDimmer', UiDimmer)
-    Vue.component('SuiDropdown', UiDropdown2)
-    Vue.component('SuiDropdownItem', UiDropdownItem2)
+    Vue.component('SuiDropdown', UiDropdown)
+    Vue.component('SuiDropdownItem', UiDropdownItem)
   }
 }
