@@ -8,6 +8,7 @@ import GettingStarted from '@/wiki/introduction/GettingStarted'
 
 //elements
 import Button from '@/wiki/elements/Button'
+import Flag from '@/wiki/elements/Flag'
 
 //modules
 import Accordion from '@/wiki/modules/Accordion'
@@ -59,6 +60,10 @@ export default new Router({
         {
           path: 'button',
           component: Button
+        },
+        {
+          path: 'flag',
+          component: Flag
         }
       ]
     },

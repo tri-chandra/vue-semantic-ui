@@ -53,6 +53,13 @@ export default {
           ]
         },
         {
+          text: 'Elements',
+          children: [
+            'Button',
+            'Flag'
+          ]
+        },
+        {
           text: 'Modules',
           children: [
             'Accordion',

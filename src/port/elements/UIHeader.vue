@@ -20,14 +20,35 @@
 </template>
 
 <script>
+import colorMixin from '@/port/mixins/ColorMixin'
+import sizeMixin from '@/port/mixins/SizeMixin'
+
 export default {
+  mixins: [colorMixin, sizeMixin],
   props: {
     h1: Boolean,
     h2: Boolean,
     h3: Boolean,
     h4: Boolean,
     h5: Boolean,
-    sub: Boolean
+    sub: Boolean,
+
+    disabled: Boolean,
+    dividing: Boolean,
+    block: Boolean,
+    icon: Boolean,
+
+    centerAligned: Boolean,
+    topAttached: Boolean,
+    attached: Boolean,
+    bottomAttached: Boolean,
+    rightFloated: Boolean,
+    leftFloated: Boolean,
+
+    rightAligned: Boolean,
+    leftAligned: Boolean,
+    justified: Boolean,
+    centerAligned: Boolean
   },
   computed: {
     appliedClass: function() {
