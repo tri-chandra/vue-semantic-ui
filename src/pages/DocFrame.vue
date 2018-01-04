@@ -57,7 +57,8 @@ export default {
           children: [
             'Button',
             'Flag',
-            'Header'
+            'Header',
+            'Icon'
           ]
         },
         {

@@ -49,14 +49,14 @@
     <sui-header sub>Price</sui-header>$10.99
     <div class="ui horizontal list">
       <div class="item">
-        <img class="ui mini circular image" src="/static/img/jenny.jpg">
+        <img class="ui mini circular image" src="/static/img/jenny.jpg" />
         <div class="content">
           <sui-header sub>Molly</sui-header>
           Coordinator
         </div>
       </div>
       <div class="item">
-        <img class="ui mini circular image" src="/static/img/jenny.jpg">
+        <img class="ui mini circular image" src="/static/img/jenny.jpg" />
         <div class="content">
           <sui-header sub>Jenny</sui-header>
           Developer
