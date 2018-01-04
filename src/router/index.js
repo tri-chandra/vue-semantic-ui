@@ -11,6 +11,7 @@ import Button from '@/wiki/elements/Button'
 import Flag from '@/wiki/elements/Flag'
 import Header from '@/wiki/elements/Header'
 import Icon from '@/wiki/elements/Icon'
+import Image from '@/wiki/elements/Image'
 
 //modules
 import Accordion from '@/wiki/modules/Accordion'
@@ -74,6 +75,10 @@ export default new Router({
         {
           path: 'icon',
           component: Icon
+        },
+        {
+          path: 'image',
+          component: Image
         }
       ]
     },

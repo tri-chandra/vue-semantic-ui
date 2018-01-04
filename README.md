@@ -39,7 +39,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 | ✔ Flag          | 🚧 Menu          | 🚧 Feed          | ✔🚧 Dropdown      |                    |
 | ✔🚧 Header        | 🚧 Message       | 🚧 Item          | 🚧 Embed         |                    |
 | ✔ Icon          | 🚧 Table         | 🚧 Statistic     | 🚧 Modal         |                    |
-| 🚧 Image         |                 |                 | 🚧 Popup         |                    |
+| ✔ Image         |                 |                 | 🚧 Popup         |                    |
 | 🚧 Input         |                 |                 | 🚧 Progress      |                    |
 | 🚧 Label         |                 |                 | 🚧 Rating        |                    |
 | 🚧 List          |                 |                 | 🚧 Search        |                    |

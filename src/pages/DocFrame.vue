@@ -58,7 +58,8 @@ export default {
             'Button',
             'Flag',
             'Header',
-            'Icon'
+            'Icon',
+            'Image'
           ]
         },
         {
