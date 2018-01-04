@@ -9,6 +9,7 @@ import GettingStarted from '@/wiki/introduction/GettingStarted'
 //elements
 import Button from '@/wiki/elements/Button'
 import Flag from '@/wiki/elements/Flag'
+import Header from '@/wiki/elements/Header'
 
 //modules
 import Accordion from '@/wiki/modules/Accordion'
@@ -64,6 +65,10 @@ export default new Router({
         {
           path: 'flag',
           component: Flag
+        },
+        {
+          path: 'header',
+          component: Header
         }
       ]
     },

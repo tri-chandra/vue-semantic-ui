@@ -2,7 +2,7 @@
   <div>
     <sui-header h1>
       Button
-      <sui-header sub>A button indicates a possible user action</sui-header>
+      <sui-header caption>A button indicates a possible user action</sui-header>
     </sui-header>
     <sui-button basic active>11 Themes</sui-button>
     <sui-button primary>Download</sui-button>

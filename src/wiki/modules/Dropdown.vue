@@ -2,7 +2,7 @@
   <div>
     <sui-header h1>
       Dropdown
-      <sui-header sub>A dropdown allows a user to select a value from a series of options</sui-header>
+      <sui-header caption>A dropdown allows a user to select a value from a series of options</sui-header>
     </sui-header>
     <sui-container>
       <sui-header h2>Types</sui-header>
