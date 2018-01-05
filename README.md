@@ -40,7 +40,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 | ✔🚧 Header        | 🚧 Message       | 🚧 Item          | 🚧 Embed         |                    |
 | ✔ Icon          | 🚧 Table         | 🚧 Statistic     | 🚧 Modal         |                    |
 | ✔ Image         |                 |                 | 🚧 Popup         |                    |
-| 🚧 Input         |                 |                 | 🚧 Progress      |                    |
+| ✔🚧 Input         |                 |                 | 🚧 Progress      |                    |
 | 🚧 Label         |                 |                 | 🚧 Rating        |                    |
 | 🚧 List          |                 |                 | 🚧 Search        |                    |
 | 🚧 Loader        |                 |                 | 🚧 Shape         |                    |

@@ -12,6 +12,7 @@ import Flag from '@/wiki/elements/Flag'
 import Header from '@/wiki/elements/Header'
 import Icon from '@/wiki/elements/Icon'
 import Image from '@/wiki/elements/Image'
+import Input from '@/wiki/elements/Input'
 
 //modules
 import Accordion from '@/wiki/modules/Accordion'
@@ -79,6 +80,10 @@ export default new Router({
         {
           path: 'image',
           component: Image
+        },
+        {
+          path: 'input',
+          component: Input
         }
       ]
     },

@@ -6,6 +6,7 @@ import UiFlag from '@/port/elements/UIFlag'
 import UiHeader from '@/port/elements/UIHeader'
 import UiIcon from '@/port/elements/UIIcon'
 import UiImage from '@/port/elements/UIImage'
+import UiInput from '@/port/elements/UIInput'
 import UiRail from '@/port/elements/UIRail'
 
 //collections
@@ -36,6 +37,7 @@ export default {
     Vue.component('SuiHeader', UiHeader)
     Vue.component('SuiIcon', UiIcon)
     Vue.component('SuiImage', UiImage)
+    Vue.component('SuiInput', UiInput)
     Vue.component('SuiRail', UiRail)
 
     Vue.component('SuiMenu', UiMenu)

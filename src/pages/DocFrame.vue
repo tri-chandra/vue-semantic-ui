@@ -59,7 +59,8 @@ export default {
             'Flag',
             'Header',
             'Icon',
-            'Image'
+            'Image',
+            'Input'
           ]
         },
         {
