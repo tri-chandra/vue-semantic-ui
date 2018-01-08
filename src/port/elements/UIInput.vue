@@ -19,6 +19,7 @@ export default {
 
     focus: Boolean,
     loading: Boolean,
+    error: Boolean,
 
     disabled: Boolean
   },
@@ -38,6 +39,7 @@ export default {
 
       if (this.focus) retVal.splice(1, 0, 'focus')
       if (this.disabled) retVal.splice(1, 0, 'disabled')
+      if (this.error) retVal.splice(1, 0, 'error')
 
       return retVal
     }
