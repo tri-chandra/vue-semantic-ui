@@ -8,6 +8,7 @@ import UiIcon from '@/port/elements/UIIcon'
 import UiIcons from '@/port/elements/UIIcons'
 import UiImage from '@/port/elements/UIImage'
 import UiInput from '@/port/elements/UIInput'
+import UiLabel from '@/port/elements/UILabel'
 import UiRail from '@/port/elements/UIRail'
 
 //collections
@@ -40,6 +41,7 @@ export default {
     Vue.component('SuiIcons', UiIcons)
     Vue.component('SuiImage', UiImage)
     Vue.component('SuiInput', UiInput)
+    Vue.component('SuiLabel', UiLabel)
     Vue.component('SuiRail', UiRail)
 
     Vue.component('SuiMenu', UiMenu)

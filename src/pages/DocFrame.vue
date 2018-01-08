@@ -60,7 +60,8 @@ export default {
             'Header',
             'Icon',
             'Image',
-            'Input'
+            'Input',
+            'Label'
           ]
         },
         {
