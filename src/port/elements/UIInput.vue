@@ -4,24 +4,32 @@
       v-model="model"
       type="text"
       :placeholder="placeholder" />
-    <sui-icon v-if="icon||rightIcon||leftIcon" :value="icon||rightIcon||leftIcon" />
+    <slot></slot>
   </div>
 </template>
 
 <script>
+import sizeMixin from '@/port/mixins/SizeMixin'
+
 export default {
+  mixins: [sizeMixin],
   props: {
     value: '',
     placeholder: String,
-    icon: String,
-    leftIcon: String,
-    rightIcon: String,
+    icon: Boolean,
+    leftIcon: Boolean,
+    rightIcon: Boolean,
 
     focus: Boolean,
     loading: Boolean,
     error: Boolean,
+    disabled: Boolean,
 
-    disabled: Boolean
+    labeled: Boolean,
+    action: Boolean,
+    transparent: Boolean,
+    inverted: Boolean,
+    fluid: Boolean
   },
   data() {
     return {
@@ -40,6 +48,10 @@ export default {
       if (this.focus) retVal.splice(1, 0, 'focus')
       if (this.disabled) retVal.splice(1, 0, 'disabled')
       if (this.error) retVal.splice(1, 0, 'error')
+
+      for (let c in this.sizeClass) {
+        retVal.splice(1, 0, c)
+      }
 
       return retVal
     }
