@@ -1,5 +1,6 @@
 <template>
   <div :class="classList">
+    <slot name="label" class="ui label"></slot>
     <input
       v-model="model"
       type="text"
@@ -26,6 +27,7 @@ export default {
     disabled: Boolean,
 
     labeled: Boolean,
+    rightLabeled: Boolean,
     action: Boolean,
     transparent: Boolean,
     inverted: Boolean,
@@ -48,6 +50,12 @@ export default {
       if (this.focus) retVal.splice(1, 0, 'focus')
       if (this.disabled) retVal.splice(1, 0, 'disabled')
       if (this.error) retVal.splice(1, 0, 'error')
+
+      if (this.labeled) retVal.splice(1, 0, 'labeled')
+      else if (this.rightLabeled) retVal.splice(1, 0, 'right labeled')
+
+      if (this.transparent) retVal.splice(1, 0, 'transparent')
+      if (this.inverted) retVal.splice(1, 0, 'inverted')
 
       for (let c in this.sizeClass) {
         retVal.splice(1, 0, c)
