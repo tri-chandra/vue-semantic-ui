@@ -61,7 +61,8 @@ export default {
             'Icon',
             'Image',
             'Input',
-            'Label'
+            'Label',
+            'List'
           ]
         },
         {

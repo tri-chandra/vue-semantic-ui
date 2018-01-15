@@ -14,6 +14,7 @@ import Icon from '@/wiki/elements/Icon'
 import Image from '@/wiki/elements/Image'
 import Input from '@/wiki/elements/Input'
 import Label from '@/wiki/elements/Label'
+import List from '@/wiki/elements/List'
 
 //modules
 import Accordion from '@/wiki/modules/Accordion'
@@ -89,6 +90,10 @@ export default new Router({
         {
           path: 'label',
           component: Label
+        },
+        {
+          path: 'list',
+          component: List
         }
       ]
     },
