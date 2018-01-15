@@ -7,12 +7,20 @@ export default {
   props: {
     image: Boolean,
     tag: Boolean,
-    ribbon: Boolean,
-    attached: Boolean,
+    attached: {
+      type: String,
+      validator(val) {
+        return [
+          'top', 'bottom',
+          'top left', 'top right',
+          'bottom left', 'bottom right'].includes(val)
+      }
+    },
     horizontal: Boolean,
     floating: Boolean,
     empty: Boolean,
     basic: Boolean,
+    circular: Boolean,
 
     leftCorner: Boolean,
     rightCorner: Boolean,
@@ -21,6 +29,9 @@ export default {
     pointingBelow: Boolean,
     leftPointing: Boolean,
     rightPointing: Boolean,
+
+    ribbon: Boolean,
+    rightRibbon: Boolean,
 
     link: Boolean,
     detail: String
@@ -47,12 +58,17 @@ export default {
       if (this.rightCorner) retVal.splice(1, 0, 'right corner')
 
       if (this.tag) retVal.splice(1, 0, 'tag')
+
       if (this.ribbon) retVal.splice(1, 0, 'ribbon')
-      if (this.attached) retVal.splice(1, 0, 'attached')
+      else if (this.rightRibbon) retVal.splice(1, 0, 'right ribbon')
+
+      if (this.attached) retVal.splice(1, 0, this.attached+' attached')
+
       if (this.horizontal) retVal.splice(1, 0, 'horizontal')
       if (this.floating) retVal.splice(1, 0, 'floating')
       if (this.empty) retVal.splice(1, 0, 'empty')
       if (this.basic) retVal.splice(1, 0, 'basic')
+      if (this.circular) retVal.splice(1, 0, 'circular')
 
       return retVal
     }
