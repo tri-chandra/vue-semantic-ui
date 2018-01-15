@@ -14,7 +14,7 @@ An attempt to Port jQuery usages in Semantic-ui to Vue. I tried to implement in 
 | ✔ Icon          | 🚧 Table         | 🚧 Statistic     | 🚧 Modal         |                    |
 | ✔ Image         |                 |                 | 🚧 Popup         |                    |
 | ✔🚧 Input         |                 |                 | 🚧 Progress      |                    |
-| 🚧 Label         |                 |                 | 🚧 Rating        |                    |
+| ✔ Label         |                 |                 | 🚧 Rating        |                    |
 | 🚧 List          |                 |                 | 🚧 Search        |                    |
 | 🚧 Loader        |                 |                 | 🚧 Shape         |                    |
 | 🚧 Rail          |                 |                 | 🚧 Sidebar       |                    |
