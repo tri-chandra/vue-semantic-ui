@@ -10,6 +10,7 @@ import UiImage from '@/port/elements/UIImage'
 import UiInput from '@/port/elements/UIInput'
 import UiLabel from '@/port/elements/UILabel'
 import UiList from '@/port/elements/UIList'
+import UiListContent from '@/port/elements/UIListContent'
 import UiListItem from '@/port/elements/UIListItem'
 import UiRail from '@/port/elements/UIRail'
 
@@ -45,6 +46,7 @@ export default {
     Vue.component('SuiInput', UiInput)
     Vue.component('SuiLabel', UiLabel)
     Vue.component('SuiList', UiList)
+    Vue.component('SuiListContent', UiListContent)
     Vue.component('SuiListItem', UiListItem)
     Vue.component('SuiRail', UiRail)
 

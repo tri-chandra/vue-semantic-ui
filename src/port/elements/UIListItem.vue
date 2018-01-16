@@ -1,41 +1,27 @@
 
+<template>
+  <a v-if="link" :class="classList">
+    <slot></slot>
+  </a>
+  <div v-else :class="classList">
+    <slot></slot>
+  </div>
+</template>
+
 <script>
 export default {
-  render(h) {
-    let children = []
+  props: {
+    link: Boolean,
+    active: Boolean
+  },
+  computed: {
+    classList() {
+      let retVal = ['item']
 
-    if (this.$slots.header && this.$slots.header.length > 0) {
-      if (this.$slots.header[0].data.staticClass) {
-        this.$slots.header[0].data.staticClass += ' header'
-      } else {
-        this.$slots.header[0].data.staticClass = 'header'
-      }
+      if (this.active) retVal.splice(0, 0, 'active')
 
-      children.push(this.$slots.header[0])
-      console.log(this.$slots.header[0])
+      return retVal
     }
-
-    if (this.$slots.description && this.$slots.description.length > 0) {
-      if (this.$slots.description[0].data.staticClass) {
-        this.$slots.description[0].data.staticClass += ' description'
-      } else {
-        this.$slots.description[0].data.staticClass = 'description'
-      }
-
-      children.push(this.$slots.description[0])
-    }
-
-    for (let idx in this.$slots.default) {
-      children.push(this.$slots.default[idx])
-    }
-
-    return h(
-      'div',
-      {
-        'class': ['content']
-      },
-      children
-    )
   }
 }
 </script>
