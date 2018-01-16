@@ -12,13 +12,15 @@
 export default {
   props: {
     link: Boolean,
-    active: Boolean
+    active: Boolean,
+    disabled: Boolean
   },
   computed: {
     classList() {
       let retVal = ['item']
 
       if (this.active) retVal.splice(0, 0, 'active')
+      if (this.disabled) retVal.splice(0, 0, 'disabled')
 
       return retVal
     }

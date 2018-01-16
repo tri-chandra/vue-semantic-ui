@@ -1,6 +1,25 @@
 
 <script>
 export default {
+  props: {
+    alignment: {
+      type: String,
+      validator: function(val) {
+        return ['top', 'middle', 'bottom'].includes(val)
+      }
+    },
+    rightFloated: Boolean
+  },
+  computed: {
+    classList() {
+      var retVal = ['content']
+
+      if (this.alignment) retVal.splice(0, 0, `${this.alignment} aligned`)
+      if (this.rightFloated) retVal.splice(0, 0, 'right floated')
+
+      return retVal
+    }
+  },
   render(h) {
     let children = []
 
@@ -12,7 +31,6 @@ export default {
       }
 
       children.push(this.$slots.header[0])
-      console.log(this.$slots.header[0])
     }
 
     if (this.$slots.description && this.$slots.description.length > 0) {
@@ -32,7 +50,7 @@ export default {
     return h(
       'div',
       {
-        'class': ['content']
+        'class': this.classList
       },
       children
     )

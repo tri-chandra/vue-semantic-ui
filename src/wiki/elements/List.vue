@@ -381,37 +381,398 @@
 
   <sui-header h4>Selection</sui-header>
   <p>A selection list formats list items as possible choices</p>
-  <p></p>
+  <p>
+    <example>
+      <sui-list selection>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+            <div slot="description">Admin</div>
+          </sui-list-content>
+        </sui-list-item>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+            <div slot="description">Admin</div>
+          </sui-list-content>
+        </sui-list-item>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+            <div slot="description">Admin</div>
+          </sui-list-content>
+        </sui-list-item>
+      </sui-list>
+    </example>
+  </p>
 
   <sui-header h4>Animated</sui-header>
   <p>A list can animate to set the current item apart from the list</p>
-  <p></p>
+  <p>
+    <example>
+      <sui-list animated>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+            <div slot="description">Admin</div>
+          </sui-list-content>
+        </sui-list-item>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+            <div slot="description">Admin</div>
+          </sui-list-content>
+        </sui-list-item>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+            <div slot="description">Admin</div>
+          </sui-list-content>
+        </sui-list-item>
+      </sui-list>
+    </example>
+  </p>
 
   <sui-header h4>Relaxed</sui-header>
   <p>A list can relax its padding to provide more negative space</p>
-  <p></p>
+  <p>
+    <example>
+      <sui-list relaxed>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+            <div slot="description">Last seen watching <a><b>Arrested Development</b></a> just now.</div>
+          </sui-list-content>
+        </sui-list-item>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+            <div slot="description">Last seen watching <a><b>Arrested Development</b></a> just now.</div>
+          </sui-list-content>
+        </sui-list-item>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+            <div slot="description">Last seen watching <a><b>Arrested Development</b></a> just now.</div>
+          </sui-list-content>
+        </sui-list-item>
+      </sui-list>
+    </example>
+
+    <example>
+      <sui-list very-relaxed>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+            <div slot="description">Last seen watching <a><b>Arrested Development</b></a> just now.</div>
+          </sui-list-content>
+        </sui-list-item>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+            <div slot="description">Last seen watching <a><b>Arrested Development</b></a> just now.</div>
+          </sui-list-content>
+        </sui-list-item>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+            <div slot="description">Last seen watching <a><b>Arrested Development</b></a> just now.</div>
+          </sui-list-content>
+        </sui-list-item>
+      </sui-list>
+    </example>
+  </p>
 
   <sui-header h4>Divided</sui-header>
   <p>A list can show divisions between content</p>
-  <p></p>
+  <p>
+    <example>
+      <sui-list divided>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+            <div slot="description">Last seen watching <a><b>Arrested Development</b></a> just now.</div>
+          </sui-list-content>
+        </sui-list-item>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+            <div slot="description">Last seen watching <a><b>Arrested Development</b></a> just now.</div>
+          </sui-list-content>
+        </sui-list-item>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+            <div slot="description">Last seen watching <a><b>Arrested Development</b></a> just now.</div>
+          </sui-list-content>
+        </sui-list-item>
+      </sui-list>
+    </example>
+  </p>
 
   <sui-header h4>Celled</sui-header>
   <p>A list can divide its items into cells</p>
-  <p></p>
+  <p>
+    <example>
+      <sui-list celled>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+            <div slot="description">Last seen watching <a><b>Arrested Development</b></a> just now.</div>
+          </sui-list-content>
+        </sui-list-item>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+            <div slot="description">Last seen watching <a><b>Arrested Development</b></a> just now.</div>
+          </sui-list-content>
+        </sui-list-item>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+            <div slot="description">Last seen watching <a><b>Arrested Development</b></a> just now.</div>
+          </sui-list-content>
+        </sui-list-item>
+      </sui-list>
+    </example>
+  </p>
 
   <sui-header h4>Size</sui-header>
   <p>A list can vary in size</p>
-  <p></p>
+  <p>
+    <example>
+      <sui-list mini horizontal divided>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+          </sui-list-content>
+        </sui-list-item>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+          </sui-list-content>
+        </sui-list-item>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+          </sui-list-content>
+        </sui-list-item>
+      </sui-list>
+    </example>
+
+    <example>
+      <sui-list tiny horizontal divided>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+          </sui-list-content>
+        </sui-list-item>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+          </sui-list-content>
+        </sui-list-item>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+          </sui-list-content>
+        </sui-list-item>
+      </sui-list>
+    </example>
+
+    <example>
+      <sui-list small horizontal divided>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+          </sui-list-content>
+        </sui-list-item>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+          </sui-list-content>
+        </sui-list-item>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+          </sui-list-content>
+        </sui-list-item>
+      </sui-list>
+    </example>
+
+    <example>
+      <sui-list large horizontal divided>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+          </sui-list-content>
+        </sui-list-item>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+          </sui-list-content>
+        </sui-list-item>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+          </sui-list-content>
+        </sui-list-item>
+      </sui-list>
+    </example>
+
+    <example>
+      <sui-list big horizontal divided>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+          </sui-list-content>
+        </sui-list-item>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+          </sui-list-content>
+        </sui-list-item>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+          </sui-list-content>
+        </sui-list-item>
+      </sui-list>
+    </example>
+
+    <example>
+      <sui-list massive horizontal divided>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+          </sui-list-content>
+        </sui-list-item>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+          </sui-list-content>
+        </sui-list-item>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            <a slot="header">Jenny</a>
+          </sui-list-content>
+        </sui-list-item>
+      </sui-list>
+    </example>
+  </p>
 
   <sui-header dividing h2>Content Variations</sui-header>
 
   <sui-header h4>Vertically Aligned</sui-header>
   <p>An element inside a list can be vertically aligned</p>
-  <p></p>
+  <p>
+    <example>
+      <sui-list horizontal>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content alignment="top">
+            <a slot="header">Top Aligned</a>
+          </sui-list-content>
+        </sui-list-item>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content alignment="middle">
+            <a slot="header">Middle</a>
+          </sui-list-content>
+        </sui-list-item>
+        <sui-list-item>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content alignment="bottom">
+            <a slot="header">Bottom</a>
+          </sui-list-content>
+        </sui-list-item>
+      </sui-list>
+    </example>
+  </p>
 
   <sui-header h4>Floated</sui-header>
   <p>A list, or an element inside a list can be floated left or right</p>
-  <p></p>
+  <p>
+    <example>
+      <sui-list divided>
+        <sui-list-item>
+          <sui-list-content right-floated>
+            <sui-button>Add</sui-button>
+          </sui-list-content>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            Jenny
+          </sui-list-content>
+        </sui-list-item>
+        <sui-list-item>
+          <sui-list-content right-floated>
+            <sui-button>Add</sui-button>
+          </sui-list-content>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            Jenny
+          </sui-list-content>
+        </sui-list-item><sui-list-item>
+          <sui-list-content right-floated>
+            <sui-button>Add</sui-button>
+          </sui-list-content>
+          <sui-image avatar src="/static/img/jenny.jpg"/>
+          <sui-list-content>
+            Jenny
+          </sui-list-content>
+        </sui-list-item>
+      </sui-list>
+    </example>
+
+    <example>
+      <sui-list right-floated horizontal>
+        <sui-list-item disabled>© Github, Inc.</sui-list-item>
+        <sui-list-item link>Terms</sui-list-item>
+        <sui-list-item link>Privacy</sui-list-item>
+        <sui-list-item link>Contact</sui-list-item>
+      </sui-list>
+      <sui-list horizontal>
+        <sui-list-item link>About Us</sui-list-item>
+        <sui-list-item link>Jobs</sui-list-item>
+      </sui-list>
+    </example>
+  </p>
 </div>
 </template>
 
