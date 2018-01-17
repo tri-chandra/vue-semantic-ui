@@ -18,6 +18,6 @@ An attempt to Port jQuery usages in Semantic-ui to Vue. I tried to implement in 
 | ✔ List          |                 |                 | 🚧 Search        |                    |
 | 🚧 Loader        |                 |                 | 🚧 Shape         |                    |
 | 🚧 Rail          |                 |                 | 🚧 Sidebar       |                    |
-| 🚧 Reveal        |                 |                 | 🚧 Sticky        |                    |
+| ✔ Reveal        |                 |                 | 🚧 Sticky        |                    |
 | 🚧 Segment       |                 |                 | 🚧 Tab           |                    |
 | 🚧 Step          |                 |                 | 🚧 Transition    |                    |

@@ -62,7 +62,34 @@ export default {
             'Image',
             'Input',
             'Label',
-            'List'
+            'List',
+            'Loader',
+            'Rail',
+            'Reveal',
+            'Segment',
+            'Step'
+          ]
+        },
+        {
+          text: 'Collections',
+          children: [
+            'Breadcrumb',
+            'Form',
+            'Grid',
+            'Menu',
+            'Message',
+            'Table'
+          ]
+        },
+        {
+          text: 'Views',
+          children: [
+            'Advertisement',
+            'Card',
+            'Comment',
+            'Feed',
+            'Item',
+            'Statistic'
           ]
         },
         {

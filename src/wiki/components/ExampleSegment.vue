@@ -7,6 +7,7 @@
 
 <script>
 export default {
+  name: 'Example',
   props: {
     inverted: Boolean
   }

@@ -777,8 +777,7 @@
 </template>
 
 <script>
-import Example from '@/wiki/components/ExampleSegment'
 export default {
-  components: {Example}
+
 }
 </script>

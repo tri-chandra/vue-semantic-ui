@@ -5,11 +5,15 @@ import App from './App'
 import router from './router'
 import semanticui from './port'
 
+import Example from '@/wiki/components/ExampleSegment'
+
 require('semantic-ui-css/semantic.css')
 
 Vue.config.productionTip = false
 
 Vue.use(semanticui)
+
+Vue.component('Example', Example)
 
 /* eslint-disable no-new */
 new Vue({

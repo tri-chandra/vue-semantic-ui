@@ -12,6 +12,8 @@ import UiLabel from '@/port/elements/UILabel'
 import UiList from '@/port/elements/UIList'
 import UiListContent from '@/port/elements/UIListContent'
 import UiListItem from '@/port/elements/UIListItem'
+import UiLoader from '@/port/elements/UILoader'
+import UiReveal from '@/port/elements/UIReveal'
 import UiRail from '@/port/elements/UIRail'
 
 //collections
@@ -48,6 +50,8 @@ export default {
     Vue.component('SuiList', UiList)
     Vue.component('SuiListContent', UiListContent)
     Vue.component('SuiListItem', UiListItem)
+    Vue.component('SuiLoader', UiLoader)
+    Vue.component('SuiReveal', UiReveal)
     Vue.component('SuiRail', UiRail)
 
     Vue.component('SuiMenu', UiMenu)
