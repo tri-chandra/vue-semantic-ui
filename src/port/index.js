@@ -15,6 +15,8 @@ import UiListItem from '@/port/elements/UIListItem'
 import UiLoader from '@/port/elements/UILoader'
 import UiReveal from '@/port/elements/UIReveal'
 import UiRail from '@/port/elements/UIRail'
+import UiSegment from '@/port/elements/UISegment'
+import UiStep from '@/port/elements/UIStep'
 
 //collections
 import UiMenu from '@/port/collections/UIMenu'
@@ -53,6 +55,8 @@ export default {
     Vue.component('SuiLoader', UiLoader)
     Vue.component('SuiReveal', UiReveal)
     Vue.component('SuiRail', UiRail)
+    Vue.component('SuiSegment', UiSegment)
+    Vue.component('SuiStep', UiStep)
 
     Vue.component('SuiMenu', UiMenu)
 
