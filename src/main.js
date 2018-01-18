@@ -8,6 +8,9 @@ import semanticui from './port'
 import Example from '@/wiki/components/ExampleSegment'
 
 require('semantic-ui-css/semantic.css')
+require('prismjs/prism.js')
+require('prismjs/themes/prism.css')
+// require('prismjs/themes/prism-okaidia.css')
 
 Vue.config.productionTip = false
 

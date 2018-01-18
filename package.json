@@ -13,6 +13,7 @@
     "test": "npm run unit && npm run e2e"
   },
   "dependencies": {
+    "prismjs": "^1.10.0",
     "semantic-ui-css": "^2.2.12",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
