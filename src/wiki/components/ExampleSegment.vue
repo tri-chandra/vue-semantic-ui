@@ -1,7 +1,7 @@
 <template>
 <div>
   <div :class="`html ui top attached ${inverted?'inverted':''} segment custom`">
-    <slot></slot>
+    <preview-result v-model="value"></preview-result>
     <sui-label attached="top" class="custom-label">
       Example
       <sui-icon @click.native="copyClicked" value="copy link" />
@@ -9,21 +9,24 @@
     </sui-label>
   </div>
   <div class="ui bottom attached segment" v-if="showCode">
-<pre class="language-markup">
-<code v-for="(child, idx) in htmlResult" :key="idx" v-html="prettifiedSource" class="language-markup">
-
-</code>
-</pre>
+<preview-code v-model="value" />
   </div>
 </div>
 </template>
 
 <script>
 import Prism from 'prismjs'
+import PreviewResult from '@/wiki/components/PreviewResult'
+import PreviewCode from '@/wiki/components/PreviewCode'
 
 export default {
   name: 'Example',
+  components: {PreviewResult, PreviewCode},
   props: {
+    value: {
+      type: String,
+      default: '<!-- -->'
+    },
     inverted: Boolean
   },
   data() {
