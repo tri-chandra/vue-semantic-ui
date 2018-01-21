@@ -7,19 +7,23 @@ import directionMixin from '@/port/mixins/DirectionMixin'
 export default {
   mixins: [colorMixin, sizeMixin, gridMixin, directionMixin],
   props: {
-    animated: Boolean,
-    vertical: Boolean,
-    fade: Boolean,
-    icon: Boolean,
-    labeled: Boolean,
-    rightLabeled: Boolean,
-    floated: {
+    tag: {
       type: String,
-      validator: function(val) {
-        return ['left', 'right'].includes(val)
-      }
+      default: 'div'
     },
-    attached: Boolean,
+
+    animated: Boolean,
+    verticalAnimated: Boolean,
+    fadeAnimated: Boolean,
+
+    labeled: Boolean,
+    leftLabeled: Boolean,
+    rightLabeled: Boolean,
+
+    leftFloated: Boolean,
+    rightFloated: Boolean,
+
+    icon: Boolean,
     basic: Boolean,
     active: Boolean,
     disabled: Boolean,
@@ -29,13 +33,49 @@ export default {
     fluid: Boolean,
     circular: Boolean
   },
-  data() {
-    return {
-
-    }
-  },
   computed: {
-    coreClass: function() { return {ui:true, button:true} }
+    coreClass() { 
+      return 'button'
+    },
+    classList() {
+      let retVal = ['ui', this.coreClass]
+
+      if (this.animated) retVal.splice(1, 0, 'animated')
+      else if (this.verticalAnimated) retVal.splice(1, 0, 'vertical animated')
+      else if (this.fadeAnimated) retVal.splice(1, 0, 'fade animated')
+      
+      if (this.labeled) retVal.splice(1, 0, 'labeled')
+      else if (this.leftLabeled) retVal.splice(1, 0, 'left labeled')
+      else if (this.rightLabeled) retVal.splice(1, 0, 'right labeled')
+
+      if (this.icon) retVal.splice(1, 0, 'icon')
+      if (this.basic) retVal.splice(1, 0, 'basic')
+      if (this.active) retVal.splice(1, 0, 'active')
+      if (this.disabled) retVal.splice(1, 0, 'disabled')
+      if (this.loading) retVal.splice(1, 0, 'loading')
+      if (this.compact) retVal.splice(1, 0, 'compact')
+      if (this.toggle) retVal.splice(1, 0, 'toggle')
+      if (this.fluid) retVal.splice(1, 0, 'fluid')
+      if (this.circular) retVal.splice(1, 0, 'circular')
+
+      if (this.leftFloated) retVal.splice(1, 0, 'left floated')      
+      else if (this.rightFloated) retVal.splice(1, 0, 'right floated')      
+
+      for (let c in this.colorClass) {
+        retVal.splice(1, 0, c)
+      }
+      for (let c in this.sizeClass) {
+        retVal.splice(1, 0, c)
+      }
+      for (let c in this.gridMixin) {
+        retVal.splice(1, 0, c)
+      }
+      for (let c in this.directionMixin) {
+        retVal.splice(1, 0, c)
+      }
+
+      return retVal
+    }
   },
   methods: {
     click: function(e) {
@@ -44,43 +84,36 @@ export default {
     }
   },
   render: function(h) {
-    var classList = this.coreClass
-
-    if (this.$props.rightLabeled) {
-      delete this.$props.rightLabeled
-      this.$props['right labeled'] = true
-    }
-    if (this.$props.google) {
-      delete this.$props.google
-      this.$props['google plus'] = true
-    }
-    for (var attr in this.$props) {
-      if (this.$props[attr] === true) {
-        classList[attr] = this.$props[attr]
-      } else if (typeof this.$props[attr] === 'string') {
-        classList[`${this.$props[attr]} ${attr}`] = true
-      }
-    }
-
     var children = []
-    if (this.$slots.default) {
-      for (var idx in this.$slots.default) {
-        children.push(this.$slots.default[idx])
+    
+    if (this.$slots.visible && this.$slots.visible.length > 0) {
+      if (this.$slots.visible[0].data.staticClass) {
+        this.$slots.visible[0].data.staticClass += ' visible content'
+      } else {
+        this.$slots.visible[0].data.staticClass = 'visible content'
       }
-    }
-    if (this.$slots.visible) {
-      this.$slots.visible[0].data.staticClass += ' visible content'
+
       children.push(this.$slots.visible[0])
     }
-    if (this.$slots.hidden) {
-      this.$slots.hidden[0].data.staticClass += ' hidden content'
+
+    if (this.$slots.hidden && this.$slots.hidden.length > 0) {
+      if (this.$slots.hidden[0].data.staticClass) {
+        this.$slots.hidden[0].data.staticClass += ' hidden content'
+      } else {
+        this.$slots.hidden[0].data.staticClass = 'hidden content'
+      }
+
       children.push(this.$slots.hidden[0])
     }
 
+    for (let idx in this.$slots.default) {
+      children.push(this.$slots.default[idx])
+    }
+
     return h(
-      children.length>1 ? 'div' : 'button',
+      this.tag,
       {
-        'class': classList,
+        'class': this.classList,
         on: {
           click: this.click
         }

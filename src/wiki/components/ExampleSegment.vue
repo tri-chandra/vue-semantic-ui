@@ -25,7 +25,7 @@ export default {
   components: {PreviewResult, PreviewCode},
   props: {
     value: {
-      type: String,
+      type: [String, Object],
       default: '<!-- -->'
     },
     inverted: Boolean,
@@ -77,7 +77,14 @@ export default {
 
 <style scoped>
 .custom {
-  padding: 3.5em 1em 1em;
+  padding: 3.5em 1em 0em;
+}
+.custom:after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
 }
 .custom-label {
   background-color: #F8F8F8;

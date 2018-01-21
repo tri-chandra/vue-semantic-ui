@@ -11,6 +11,7 @@ export default {
     facebook: Boolean,
     twitter: Boolean,
     google: Boolean,
+    googlePlus: Boolean,
     vk: Boolean,
     linkedin: Boolean,
     instagram: Boolean,
@@ -45,6 +46,7 @@ export default {
       else if (this.facebook) c.facebook = true
       else if (this.twitter) c.twitter = true
       else if (this.google) c.google = true
+      else if (this.googlePlus) c['google plus'] = true
       else if (this.vk) c.vk = true
       else if (this.linkedin) c.linkedin = true
       else if (this.instagram) c.instagram = true

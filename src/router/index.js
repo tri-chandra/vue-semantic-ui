@@ -8,6 +8,7 @@ import GettingStarted from '@/wiki/introduction/GettingStarted'
 
 //elements
 import Button from '@/wiki/elements/Button'
+import Button2 from '@/wiki/elements/Button2'
 import Flag from '@/wiki/elements/Flag'
 import Header from '@/wiki/elements/Header'
 import Icon from '@/wiki/elements/Icon'
@@ -87,6 +88,10 @@ export default new Router({
         {
           path: 'button',
           component: Button
+        },
+        {
+          path: 'button2',
+          component: Button2
         },
         {
           path: 'flag',

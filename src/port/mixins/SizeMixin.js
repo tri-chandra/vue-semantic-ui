@@ -1,8 +1,5 @@
 export default {
   props: {
-    //preset
-    compact: Boolean,
-
     //size
     mini: Boolean,
     tiny: Boolean,
@@ -11,16 +8,11 @@ export default {
     large: Boolean,
     big: Boolean,
     huge: Boolean,
-    massive: Boolean,
-
-    //responsive
-    fluid: Boolean
+    massive: Boolean
   },
   computed: {
     sizeClass: function() {
       var c = {}
-
-      if (this.compact) c.compact = true
 
       if (this.mini) c.mini = true
       else if (this.tiny) c.tiny = true
@@ -30,8 +22,6 @@ export default {
       else if (this.big) c.big = true
       else if (this.huge) c.huge = true
       else if (this.massive) c.massive = true
-
-      if (this.fluid) c.fluid = true
 
       return c
     }

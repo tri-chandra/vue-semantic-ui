@@ -2,14 +2,18 @@
 export default {
   props: {
     value: {
-      type: String,
+      type: [String, Object],
       required: true
     }
   },
   render(h) {
-    return h({
-      template: this.value
-    })
+    return h(
+      typeof this.value === 'string' ?
+      {
+        template: this.value
+      } :
+      this.value
+    )
   }
 }
 </script>
