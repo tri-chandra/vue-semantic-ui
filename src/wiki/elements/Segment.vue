@@ -1,6 +1,6 @@
 <template>
 <div>
-  <sui-header h1>
+  <!-- <sui-header h1>
     Segment
     <sui-header caption>A segment is used to create a grouping of related content</sui-header>
   </sui-header>
@@ -179,7 +179,7 @@
   <p>
     <example>
     </example>
-  </p>
+  </p> -->
 </div>
 </template>
 

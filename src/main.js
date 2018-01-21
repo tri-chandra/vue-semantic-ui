@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 import semanticui from './port'
 
-import Example from '@/wiki/components/ExampleSegment'
+import WikiTemplate from '@/wiki/components/WikiTemplate'
 
 require('semantic-ui-css/semantic.css')
 require('prismjs/prism.js')
@@ -16,7 +16,7 @@ Vue.config.productionTip = false
 
 Vue.use(semanticui)
 
-Vue.component('Example', Example)
+Vue.component('WikiTemplate', WikiTemplate)
 
 /* eslint-disable no-new */
 new Vue({

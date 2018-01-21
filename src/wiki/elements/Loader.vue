@@ -1,6 +1,6 @@
 <template>
 <div>
-  <sui-header h1>
+  <!-- <sui-header h1>
     Loader
     <sui-header caption>A loader alerts a user to wait for an activity to complete</sui-header>
   </sui-header>
@@ -76,7 +76,7 @@
   <p>
     <example>
     </example>
-  </p>
+  </p> -->
 </div>
 </template>
 
@@ -84,7 +84,7 @@
 export default {
   data() {
     return  {
-      activeDimmer: true
+      wikiContent
     }
   }
 }

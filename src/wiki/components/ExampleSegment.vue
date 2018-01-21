@@ -1,6 +1,7 @@
 <template>
 <div>
   <div :class="`html ui top attached ${inverted?'inverted':''} segment custom`">
+    <div v-show="note" class="ui message">{{note}}</div>
     <preview-result v-model="value"></preview-result>
     <sui-label attached="top" class="custom-label">
       Example
@@ -20,14 +21,15 @@ import PreviewResult from '@/wiki/components/PreviewResult'
 import PreviewCode from '@/wiki/components/PreviewCode'
 
 export default {
-  name: 'Example',
+  name: 'ExampleSegment',
   components: {PreviewResult, PreviewCode},
   props: {
     value: {
       type: String,
       default: '<!-- -->'
     },
-    inverted: Boolean
+    inverted: Boolean,
+    note: String
   },
   data() {
     return {

@@ -1,6 +1,6 @@
 <template>
 <div>
-  <sui-header h1>
+  <!-- <sui-header h1>
     Step
     <sui-header caption>A step shows the completion status of an activity in a series of activities</sui-header>
   </sui-header>
@@ -125,7 +125,7 @@
   <p>
     <example>
     </example>
-  </p>
+  </p> -->
 </div>
 </template>
 
