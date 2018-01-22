@@ -2,10 +2,9 @@
 import colorMixin from '@/port/mixins/ColorMixin'
 import sizeMixin from '@/port/mixins/SizeMixin'
 import gridMixin from '@/port/mixins/GridMixin'
-import directionMixin from '@/port/mixins/DirectionMixin'
 
 export default {
-  mixins: [colorMixin, sizeMixin, gridMixin, directionMixin],
+  mixins: [colorMixin, sizeMixin, gridMixin],
   props: {
     tag: {
       type: String,
@@ -31,10 +30,20 @@ export default {
     compact: Boolean,
     toggle: Boolean,
     fluid: Boolean,
-    circular: Boolean
+    circular: Boolean,
+
+    attached: {
+      type: String,
+      validator(val) {
+        ['top', 'bottom', 'left', 'right'].includes(val)
+      }
+    },
+
+    //Buttons
+    vertical: Boolean
   },
   computed: {
-    coreClass() { 
+    coreClass() {
       return 'button'
     },
     classList() {
@@ -43,7 +52,7 @@ export default {
       if (this.animated) retVal.splice(1, 0, 'animated')
       else if (this.verticalAnimated) retVal.splice(1, 0, 'vertical animated')
       else if (this.fadeAnimated) retVal.splice(1, 0, 'fade animated')
-      
+
       if (this.labeled) retVal.splice(1, 0, 'labeled')
       else if (this.leftLabeled) retVal.splice(1, 0, 'left labeled')
       else if (this.rightLabeled) retVal.splice(1, 0, 'right labeled')
@@ -58,8 +67,10 @@ export default {
       if (this.fluid) retVal.splice(1, 0, 'fluid')
       if (this.circular) retVal.splice(1, 0, 'circular')
 
-      if (this.leftFloated) retVal.splice(1, 0, 'left floated')      
-      else if (this.rightFloated) retVal.splice(1, 0, 'right floated')      
+      if (this.attached) retVal.splice(1, 0, `${this.attached} attached`)
+
+      if (this.leftFloated) retVal.splice(1, 0, 'left floated')
+      else if (this.rightFloated) retVal.splice(1, 0, 'right floated')
 
       for (let c in this.colorClass) {
         retVal.splice(1, 0, c)
@@ -67,12 +78,11 @@ export default {
       for (let c in this.sizeClass) {
         retVal.splice(1, 0, c)
       }
-      for (let c in this.gridMixin) {
+      for (let c in this.gridClass) {
         retVal.splice(1, 0, c)
       }
-      for (let c in this.directionMixin) {
-        retVal.splice(1, 0, c)
-      }
+
+      if (this.vertical) retVal.splice(1, 0, 'vertical')
 
       return retVal
     }
@@ -85,7 +95,7 @@ export default {
   },
   render: function(h) {
     var children = []
-    
+
     if (this.$slots.visible && this.$slots.visible.length > 0) {
       if (this.$slots.visible[0].data.staticClass) {
         this.$slots.visible[0].data.staticClass += ' visible content'

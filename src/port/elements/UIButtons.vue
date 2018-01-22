@@ -5,7 +5,7 @@ import UiButton from './UIButton'
 var buttonInstance = Vue.extend(UiButton)
 export default buttonInstance.extend({
   computed: {
-    coreClass() { 
+    coreClass() {
       return 'buttons'
     }
   }
