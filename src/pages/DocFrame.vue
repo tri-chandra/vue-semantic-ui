@@ -56,6 +56,7 @@ export default {
           text: 'Elements',
           children: [
             'Button',
+            'Divider',
             'Flag',
             'Header',
             'Icon',

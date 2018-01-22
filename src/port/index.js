@@ -2,6 +2,7 @@
 import UiButton from '@/port/elements/UIButton'
 import UiButtons from '@/port/elements/UIButtons'
 import UiContainer from '@/port/elements/UIContainer'
+import UiDivider from '@/port/elements/UIDivider'
 import UiFlag from '@/port/elements/UIFlag'
 import UiHeader from '@/port/elements/UIHeader'
 import UiIcon from '@/port/elements/UIIcon'
@@ -42,6 +43,7 @@ export default {
     Vue.component('SuiButton', UiButton)
     Vue.component('SuiButtons', UiButtons)
     Vue.component('SuiContainer', UiContainer)
+    Vue.component('SuiDivider', UiDivider)
     Vue.component('SuiFlag', UiFlag)
     Vue.component('SuiHeader', UiHeader)
     Vue.component('SuiIcon', UiIcon)

@@ -1,7 +1,10 @@
 <template>
 <div>
   <div :class="`html ui top attached ${inverted?'inverted':''} segment custom`">
-    <div v-show="note" class="ui message">{{note}}</div>
+    <div
+      v-for="(item, idx) in transformedNote"
+      :key="idx"
+      class="ui info ignored message">{{item}}</div>
     <preview-result v-model="value"></preview-result>
     <sui-label attached="top" class="custom-label">
       Example
@@ -29,29 +32,24 @@ export default {
       default: '<!-- -->'
     },
     inverted: Boolean,
-    note: String
+    note: [String, Array]
   },
   data() {
     return {
-      showCode: false,
-      htmlResult: [],
-      temp:
-`<sui-list>
-  <sui-list-item>Apples</sui-list-item>
-  <sui-list-item>Pears</sui-list-item>
-  <sui-list-item>Oranges</sui-list-item>
-</sui-list>`
+      showCode: false
     }
   },
   computed: {
-    prettifiedSource() {
-      // let result = ''
-      // for (let idx in this.htmlResult) {
-      //   result += (Prism.highlight(this.htmlResult[idx], Prism.languages.markup))
-      // }
-      // return result
-
-      return Prism.highlight(this.temp, Prism.languages.markup)
+    transformedNote() {
+      if (Object.prototype.toString.call(this.note) === '[object Array]') {
+        return this.note
+      } else if (this.note) {
+        let retVal = []
+        retVal.push(this.note)
+        return retVal
+      } else {
+        return []
+      }
     }
   },
   methods: {
@@ -60,16 +58,6 @@ export default {
     },
     codeClicked() {
       this.showCode = !this.showCode
-    }
-  },
-  mounted() {
-    this.htmlResult = []
-    for (let idx in this.$slots.default) {
-      let child = this.$slots.default[idx]
-      if (child.elm) {
-        let html = child.elm.outerHTML
-        this.htmlResult.push(html)
-      }
     }
   }
 }
