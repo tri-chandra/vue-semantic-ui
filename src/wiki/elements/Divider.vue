@@ -7,8 +7,8 @@ export default {
   data() {
     return {
       wikiContent: {
-        title: 'Button',
-        caption: 'A button indicates a possible user action',
+        title: 'Divider',
+        caption: 'A divider visually segments content into groups',
         sections: [
            {
             title: 'Types',
@@ -108,12 +108,12 @@ export default {
                   {
                     code:
 `<div>
-<sui-header divider="horizontal" h4>
+<sui-header divider="horizontal" base-class="ui" h4>
   <sui-icon value="tag" />
   Description
 </sui-header>
 <p>Doggie treats are good for all times of the year. Proven to be eaten by 99.9% of all dogs worldwide.</p>
-<sui-header divider="horizontal" h4>
+<sui-header divider="horizontal" base-class="ui" h4>
   <sui-icon value="bar chart" /> Specifications
 </sui-header>
 <table class="ui definition table">
@@ -156,7 +156,7 @@ export default {
   <sui-image medium src="/static/img/paragraph.png""></sui-image>
   <sui-divider inverted />
   <sui-image medium src="/static/img/paragraph.png""></sui-image>
-  <sui-header inverted divider="horizontal" h4>Horizontal</sui-header>
+  <sui-header inverted divider="horizontal" base-class="ui" h4>Horizontal</sui-header>
 </div>`
                   }
                 ]

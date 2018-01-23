@@ -11,8 +11,17 @@ export default {
     h4: Boolean,
     h5: Boolean,
     h6: Boolean,
-    caption: Boolean,
     sub: Boolean,
+    baseClass: {
+      type: String,
+      validator(val) {
+        return [
+          'header',
+          'ui header',
+          'ui'
+        ].includes(val)
+      }
+    },
 
     disabled: Boolean,
     dividing: Boolean,
@@ -39,19 +48,24 @@ export default {
     }
   },
   computed: {
-    appliedClass() {
-      var c = {}
-
-      if (this.sub) c.sub = true
-
-      return c
+    prefixClass() {
+      if (!this.baseClass || this.baseClass === 'ui' || this.baseClass === 'ui header') {
+        return ['ui']
+      } else {
+        return []
+      }
+    },
+    suffixClass() {
+      if (!this.baseClass || this.baseClass === 'header' || this.baseClass === 'ui header') {
+        return ['header']
+      } else {
+        return []
+      }
     },
     classList() {
-      var retVal
+      var retVal = this.prefixClass
 
-      if (this.caption) retVal = ['sub', 'header']
-      else if (this.sub) retVal = ['ui', 'sub', 'header']
-      else retVal = ['ui', 'header']
+      if (this.sub) retVal.splice(1, 0, 'sub')
 
       for (let color in this.colorClass) {
         retVal.splice(1, 0, color)
@@ -81,6 +95,8 @@ export default {
       for (let c in this.sizeClass) {
         retVal.splice(1, 0, c)
       }
+
+      retVal.push(this.suffixClass)
 
       return retVal
     }

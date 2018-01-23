@@ -2,7 +2,7 @@
 <div>
   <div class="ui masthead vertical segment">
     <sui-header h1>{{wikiContent.title}}
-      <sui-header caption>{{wikiContent.caption}}</sui-header>
+      <sui-header sub base-class="header">{{wikiContent.caption}}</sui-header>
     </sui-header>
     <sui-button basic active>11 Themes</sui-button>
     <sui-button primary>Download</sui-button>
@@ -47,7 +47,7 @@ export default {
   data() {
     return {
       wikiContent: {
-        
+
       }
     }
   },
