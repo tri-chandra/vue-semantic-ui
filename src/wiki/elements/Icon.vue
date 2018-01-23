@@ -18,6 +18,10 @@ export default {
                 caption: 'Icons can represent types of content found on websites',
                 examples: [
                   {
+                    note: [
+                      'Icons serve a very similar function to text in a page. In Semantic icons receive a special tag <i> which allow for an abbreviated markup when sitting along-side text.',
+                      'Semantic includes a complete port of Font Awesome 4.7.0 designed by Dave Gandy for its standard icon set.'
+                    ],
                     code:
 `<div>
   <sui-icon value="add to calendar"></sui-icon>
@@ -69,7 +73,7 @@ export default {
                     code:
 `<div>
   Tight spacing
-  <sui-icon fitted value="users"></sui-icon>
+  <sui-icon fitted value="help"></sui-icon>
   Tight spacing
 </div>`
                   }
@@ -101,7 +105,8 @@ export default {
                   {
                     code:
 `<div>
-  <sui-icon link value="users"></sui-icon>
+  <sui-icon link value="close"></sui-icon>
+  <sui-icon link value="gelp"></sui-icon>
 </div>`
                   }
                 ]
@@ -113,8 +118,8 @@ export default {
                   {
                     code:
 `<div>
-  <sui-icon horizontally-flipped value="home"></sui-icon>
-  <sui-icon vertically-flipped value="home"></sui-icon>
+  <sui-icon horizontally-flipped value="cloud"></sui-icon>
+  <sui-icon vertically-flipped value="cloud"></sui-icon>
 </div>`
                   }
                 ]
@@ -126,8 +131,8 @@ export default {
                   {
                     code:
 `<div>
-  <sui-icon rotated value="users"></sui-icon>
-  <sui-icon counter-rotated value="users"></sui-icon>
+  <sui-icon rotated value="cloud"></sui-icon>
+  <sui-icon counter-rotated value="cloud"></sui-icon>
 </div>`
                   }
                 ]
@@ -191,6 +196,7 @@ export default {
                 caption: 'An icon can have its colors inverted for contrast',
                 examples: [
                   {
+                    inverted: true,
                     code:
 `<div>
   <sui-icon inverted red value="users"></sui-icon>
@@ -261,6 +267,18 @@ export default {
     <sui-icon value="puzzle"></sui-icon>
     <sui-icon bottom right corner value="add"></sui-icon>
   </sui-icons>
+</div>`
+                  },
+                  {
+                    code:
+`<div>
+  <sui-header h2>
+    <sui-icons large>
+      <sui-icon value="twitter" />
+      <sui-icon inverted corner value="add" />
+    </sui-icons>
+    Add on Twitter
+  </sui-header>
 </div>`
                   }
                 ]
