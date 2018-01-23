@@ -108,15 +108,14 @@ export default {
                   {
                     code:
 `<div>
-<sui-header horizontal divider h4>
+<sui-header divider="horizontal" h4>
   <sui-icon value="tag" />
   Description
 </sui-header>
 <p>Doggie treats are good for all times of the year. Proven to be eaten by 99.9% of all dogs worldwide.</p>
-<h4 class="ui horizontal divider header">
-  <i class="bar chart icon"></i>
-  Specifications
-</h4>
+<sui-header divider="horizontal" h4>
+  <sui-icon value="bar chart" /> Specifications
+</sui-header>
 <table class="ui definition table">
   <tbody>
     <tr>
@@ -151,8 +150,14 @@ export default {
                 caption: 'A divider can have its colors inverted',
                 examples: [
                   {
+                    inverted: true,
                     code:
-`<div></div>`
+`<div>
+  <sui-image medium src="/static/img/paragraph.png""></sui-image>
+  <sui-divider inverted />
+  <sui-image medium src="/static/img/paragraph.png""></sui-image>
+  <sui-header inverted divider="horizontal" h4>Horizontal</sui-header>
+</div>`
                   }
                 ]
               },
@@ -162,7 +167,11 @@ export default {
                 examples: [
                   {
                     code:
-`<div></div>`
+`<div>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+  <sui-divider fitted />
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+</div>`
                   }
                 ]
               },
@@ -172,7 +181,13 @@ export default {
                 examples: [
                   {
                     code:
-`<div></div>`
+`<div>
+  <sui-header h3>Section One</sui-header>
+  <sui-image medium src="/static/img/paragraph.png""></sui-image>
+  <sui-divider hidden />
+  <sui-header h3>Section Two</sui-header>
+  <sui-image medium src="/static/img/paragraph.png""></sui-image>
+</div>`
                   }
                 ]
               },
@@ -182,7 +197,13 @@ export default {
                 examples: [
                   {
                     code:
-`<div></div>`
+`<div>
+  <sui-header h3>Section One</sui-header>
+  <sui-image medium src="/static/img/paragraph.png""></sui-image>
+  <sui-divider section />
+  <sui-header h3>Section Two</sui-header>
+  <sui-image medium src="/static/img/paragraph.png""></sui-image>
+</div>`
                   }
                 ]
               },
@@ -192,7 +213,11 @@ export default {
                 examples: [
                   {
                     code:
-`<div></div>`
+`<div>
+  <sui-header right-floated h2>Floated Content</sui-header>
+  <sui-divider clearing />
+  <sui-image medium src="/static/img/paragraph.png""></sui-image>
+</div>`
                   }
                 ]
               }

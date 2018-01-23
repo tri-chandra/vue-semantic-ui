@@ -29,7 +29,14 @@ export default {
     rightAligned: Boolean,
     leftAligned: Boolean,
     justified: Boolean,
-    centerAligned: Boolean
+    centerAligned: Boolean,
+
+    divider: {
+      type: String,
+      validator(val) {
+        return ['horizontal', 'vertical'].includes(val)
+      }
+    }
   },
   computed: {
     appliedClass() {
@@ -69,11 +76,11 @@ export default {
       if (this.block) retVal.splice(1, 0, 'block')
       if (this.disabled) retVal.splice(1, 0, 'disabled')
 
-      if (this.huge) retVal.splice(1, 0, 'huge')
-      else if (this.large) retVal.splice(1, 0, 'large')
-      else if (this.medium) retVal.splice(1, 0, 'medium')
-      else if (this.small) retVal.splice(1, 0, 'small')
-      else if (this.tiny) retVal.splice(1, 0, 'tiny')
+      if (this.divider) retVal.splice(1, 0, `${this.divider} divider`)
+
+      for (let c in this.sizeClass) {
+        retVal.splice(1, 0, c)
+      }
 
       return retVal
     }
