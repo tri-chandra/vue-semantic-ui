@@ -35,7 +35,7 @@ export default {
     attached: {
       type: String,
       validator(val) {
-        ['top', 'bottom', 'left', 'right'].includes(val)
+        return ['top', 'bottom', 'left', 'right'].includes(val)
       }
     },
 
