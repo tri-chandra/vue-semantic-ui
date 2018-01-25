@@ -18,6 +18,28 @@
   </div>
 
   <div class="main ui container">
+    <!-- sidebar nav -->
+    <div class="ui dividing right rail">
+      <div class="ui sticky" style="left: 1209px;">
+        <h4 class="ui header">{{wikiContent.title}}</h4>
+        <div class="ui vertical following fluid accordion text menu">
+          <div
+            v-for="(section, idx) in wikiContent.sections"
+            :key="idx"
+            class="item">
+            <a class="title active"><i class="dropdown icon"></i> <b>{{section.title}}</b></a>
+            <div
+              v-for="(subsection, idx2) in section.subSections"
+              :key="idx2"
+              class="content menu active">
+              <a class="item" href="#input">{{subsection.title}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- main content -->
     <template v-for="(section, idx) in wikiContent.sections">
       <sui-header dividing h2 :key="`h${idx}`">{{section.title}}</sui-header>
 
@@ -66,12 +88,21 @@ export default {
   padding-top: 28px;
   padding-bottom: 98px;
 }
+.main.container {
+  position: relative;
+  width: auto !important;
+  max-width: 960px !important;
+}
 .main >>> h4, p, div {
   margin-left: 14px;
   margin-right: 14px;
 }
 .main >>> h2 {
   margin-bottom: 28px;
+}
+.rail {
+  padding-left: 1.5em;
+  width: 260px;
 }
 .example {
   margin-bottom: 28px;

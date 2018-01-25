@@ -34,7 +34,9 @@ export default {
     rightRibbon: Boolean,
 
     link: Boolean,
-    detail: String
+    detail: String,
+
+    for: String
   },
   computed: {
     classList() {
@@ -86,10 +88,16 @@ export default {
 
     children.splice(0, 0, this.$slots.default)
 
+    let tagName = 'div'
+    if (this.link) tagName = 'a'
+    else if (this.for) tagName = 'label'
     return h(
-      this.link? 'a' : 'div',
+      tagName,
       {
-        'class': this.classList
+        'class': this.classList,
+        attrs: {
+          for: this.for
+        }
       },
       children
     )

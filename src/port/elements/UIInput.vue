@@ -20,6 +20,8 @@ export default {
     icon: Boolean,
     leftIcon: Boolean,
     rightIcon: Boolean,
+    corner: Boolean,
+    leftCorner: Boolean,
 
     focus: Boolean,
     loading: Boolean,
@@ -29,6 +31,7 @@ export default {
     labeled: Boolean,
     rightLabeled: Boolean,
     action: Boolean,
+    leftAction: Boolean,
     transparent: Boolean,
     inverted: Boolean,
     fluid: Boolean
@@ -50,12 +53,17 @@ export default {
       if (this.focus) retVal.splice(1, 0, 'focus')
       if (this.disabled) retVal.splice(1, 0, 'disabled')
       if (this.error) retVal.splice(1, 0, 'error')
+      if (this.fluid) retVal.splice(1, 0, 'fluid')
 
       if (this.labeled) retVal.splice(1, 0, 'labeled')
       else if (this.rightLabeled) retVal.splice(1, 0, 'right labeled')
+      if (this.corner) retVal.splice(1, 0, 'corner')
+      else if (this.leftCorner) retVal.splice(1, 0, 'left corner')
 
       if (this.transparent) retVal.splice(1, 0, 'transparent')
       if (this.inverted) retVal.splice(1, 0, 'inverted')
+      if (this.action) retVal.splice(1, 0, 'action')
+      else if (this.leftAction) retVal.splice(1, 0, 'left action')
 
       for (let c in this.sizeClass) {
         retVal.splice(1, 0, c)

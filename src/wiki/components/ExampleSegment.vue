@@ -65,7 +65,7 @@ export default {
 
 <style scoped>
 .custom {
-  padding: 3.5em 1em 0em;
+  padding: 3.5em 1em 1em;
 }
 .custom:after {
   content: '';

@@ -56,7 +56,9 @@ export default {
     fluid: Boolean,
     labeled: Boolean,
     icon: Boolean,
-    button: Boolean
+    button: Boolean,
+    basic: Boolean,
+    compact: Boolean
   },
   data() {
     return {
@@ -105,6 +107,12 @@ export default {
       }
       if (this.selection) {
         retVal.splice(1, 0, 'selection')
+      }
+      if (this.basic) {
+        retVal.splice(1, 0, 'basic')
+      }
+      if (this.compact) {
+        retVal.splice(1, 0, 'compact')
       }
 
       return retVal
