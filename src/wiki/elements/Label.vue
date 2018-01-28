@@ -20,7 +20,7 @@ export default {
                   {
                     code:
 `<sui-label>
-  <sui-icon value="mail" /> 23
+  <sui-icon value="mail" />23
 </sui-label>`
                   }
                 ]
@@ -442,10 +442,3 @@ export default {
   }
 }
 </script>
-
-<style scope>
-.wireframe {
-  border:1px solid rgba(34,36,38,.15);
-  border-radius:.28571429rem;
-}
-</style>

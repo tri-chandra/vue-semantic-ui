@@ -8,8 +8,8 @@
     <preview-result v-model="value"></preview-result>
     <sui-label attached="top" class="custom-label">
       Example
-      <sui-icon @click.native="copyClicked" value="copy link" />
-      <sui-icon @click.native="codeClicked" value="code" />
+      <sui-icon @click.native="copyClicked" value="copy link" class="custom-action" />
+      <sui-icon @click.native="codeClicked" value="code" class="custom-action" />
     </sui-label>
   </div>
   <div class="ui bottom attached segment" v-if="showCode">
@@ -79,7 +79,7 @@ export default {
   box-shadow: 0px 0px 0px 1px #DDDDDD;
   user-select: none;
 }
-.label >>> .icon {
+.custom-action {
   float: right;
   cursor: pointer;
 }
