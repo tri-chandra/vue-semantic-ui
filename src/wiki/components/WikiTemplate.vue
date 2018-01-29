@@ -40,6 +40,7 @@
     </div>
 
     <!-- main content -->
+    <slot></slot>
     <template v-for="(section, idx) in wikiContent.sections">
       <sui-header dividing h2 :key="`h${idx}`">{{section.title}}</sui-header>
 
