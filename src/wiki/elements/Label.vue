@@ -396,41 +396,61 @@ export default {
             subSections: [
               {
                 title: 'Group Size',
-                caption: 'caption',
+                caption: 'Labels can share sizes together',
                 examples: [
                   {
                     code:
-`<div></div>`
+`<sui-labels huge>
+  <sui-label>Fun</sui-label>
+  <sui-label>Happy</sui-label>
+  <sui-label>Smart</sui-label>
+  <sui-label>Witty</sui-label>
+</sui-labels>`
                   }
                 ]
               },
               {
                 title: 'Colored Group',
-                caption: 'caption',
+                caption: 'Labels can share colors together',
                 examples: [
                   {
                     code:
-`<div></div>`
+`<sui-labels blue>
+  <sui-label>Fun<sui-icon value="close" /></sui-label>
+  <sui-label detail="22">Happy</sui-label>
+  <sui-label>Smart</sui-label>
+  <sui-label>Witty</sui-label>
+</sui-labels>`
                   }
                 ]
               },
               {
                 title: 'Tag Group',
-                caption: 'caption',
+                caption: 'Labels can share tag formatting',
                 examples: [
                   {
                     code:
-`<div></div>`
+`<sui-labels tag>
+  <sui-label>$10.00</sui-label>
+  <sui-label>$19.99</sui-label>
+  <sui-label>$24.99</sui-label>
+  <sui-label>$10.25</sui-label>
+</sui-labels>`
                   }
                 ]
               },
               {
                 title: 'Circular Group',
-                caption: 'caption',
+                caption: 'Labels can share shapes',
                 examples: [
                   {
                     code:
-`<div></div>`
+`<sui-labels circular>
+  <sui-label>11</sui-label>
+  <sui-label>22</sui-label>
+  <sui-label>33</sui-label>
+  <sui-label>44</sui-label>
+</sui-labels>`
                   }
                 ]
               }

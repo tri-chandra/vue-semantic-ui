@@ -39,8 +39,11 @@ export default {
     for: String
   },
   computed: {
+    coreClass() {
+      return 'label'
+    },
     classList() {
-      let retVal = ['ui', 'label']
+      let retVal = ['ui', this.coreClass]
 
       for (let c in this.colorClass) {
         retVal.splice(1, 0, c)

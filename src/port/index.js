@@ -10,6 +10,7 @@ import UiIcons from '@/port/elements/UIIcons'
 import UiImage from '@/port/elements/UIImage'
 import UiInput from '@/port/elements/UIInput'
 import UiLabel from '@/port/elements/UILabel'
+import UiLabels from '@/port/elements/UILabels'
 import UiList from '@/port/elements/UIList'
 import UiListContent from '@/port/elements/UIListContent'
 import UiListItem from '@/port/elements/UIListItem'
@@ -51,6 +52,7 @@ export default {
     Vue.component('SuiImage', UiImage)
     Vue.component('SuiInput', UiInput)
     Vue.component('SuiLabel', UiLabel)
+    Vue.component('SuiLabels', UiLabels)
     Vue.component('SuiList', UiList)
     Vue.component('SuiListContent', UiListContent)
     Vue.component('SuiListItem', UiListItem)
