@@ -36,7 +36,8 @@ export default {
     },
     stackable: Boolean,
     inverted: Boolean,
-    fluid: Boolean
+    fluid: Boolean,
+    borderless: Boolean
   },
   computed: {
     classList() {
@@ -57,6 +58,7 @@ export default {
       if (this.stackable) retVal.splice(1, 0, 'stackable')
       if (this.inverted) retVal.splice(1, 0, 'inverted')
       if (this.fluid) retVal.splice(1, 0, 'fluid')
+      if (this.borderless) retVal.splice(1, 0, 'borderless')
 
       for (let c in this.colorClass) {
         retVal.splice(1, 0, c)

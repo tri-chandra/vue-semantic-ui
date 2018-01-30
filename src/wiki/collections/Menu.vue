@@ -872,7 +872,188 @@ export default {
                 examples: [
                   {
                     code:
-`<div></div>`
+`<div>
+  <sui-menu mini>
+    <sui-menu-item link>Home</sui-menu-item>
+    <sui-menu-item link>Messages</sui-menu-item>
+    <sui-menu right sub>
+      <sui-menu-item>
+        <sui-button primary>Sign Up</sui-button>
+      </sui-menu-item>
+      <sui-menu-item>Language</sui-menu-item>
+    </sui-menu>
+  </sui-menu>
+  <sui-menu tiny>
+    <sui-menu-item link>Home</sui-menu-item>
+    <sui-menu-item link>Messages</sui-menu-item>
+    <sui-menu right sub>
+      <sui-menu-item>
+        <sui-button primary>Sign Up</sui-button>
+      </sui-menu-item>
+      <sui-menu-item>Language</sui-menu-item>
+    </sui-menu>
+  </sui-menu>
+  <sui-menu small>
+    <sui-menu-item link>Home</sui-menu-item>
+    <sui-menu-item link>Messages</sui-menu-item>
+    <sui-menu right sub>
+      <sui-menu-item>
+        <sui-button primary>Sign Up</sui-button>
+      </sui-menu-item>
+      <sui-menu-item>Language</sui-menu-item>
+    </sui-menu>
+  </sui-menu>
+  <sui-menu large>
+    <sui-menu-item link>Home</sui-menu-item>
+    <sui-menu-item link>Messages</sui-menu-item>
+    <sui-menu right sub>
+      <sui-menu-item>
+        <sui-button primary>Sign Up</sui-button>
+      </sui-menu-item>
+      <sui-menu-item>Language</sui-menu-item>
+    </sui-menu>
+  </sui-menu>
+  <sui-menu big>
+    <sui-menu-item link>Home</sui-menu-item>
+    <sui-menu-item link>Messages</sui-menu-item>
+    <sui-menu right sub>
+      <sui-menu-item>
+        <sui-button primary>Sign Up</sui-button>
+      </sui-menu-item>
+      <sui-menu-item>Language</sui-menu-item>
+    </sui-menu>
+  </sui-menu>
+  <sui-menu massive>
+    <sui-menu-item link>Home</sui-menu-item>
+    <sui-menu-item link>Messages</sui-menu-item>
+    <sui-menu right sub>
+      <sui-menu-item>
+        <sui-button primary>Sign Up</sui-button>
+      </sui-menu-item>
+      <sui-menu-item>Language</sui-menu-item>
+    </sui-menu>
+  </sui-menu>
+</div>`
+                  },
+                  {
+                    note: 'A vertical menu can also vary in size',
+                    code:
+`<div>
+  <sui-menu mini vertical>
+    <sui-menu-item active link>
+      <sui-label teal>1</sui-label>
+      Inbox
+    </sui-menu-item>
+    <sui-menu-item link>
+      <sui-label>51</sui-label>
+      Spam
+    </sui-menu-item>
+    <sui-menu-item link>
+      <sui-label>1</sui-label>
+      Updates
+    </sui-menu-item>
+    <sui-menu-item link>
+      <sui-input icon>
+        <sui-icon value="search" />
+      </sui-input>
+    </sui-menu-item>
+  </sui-menu>
+  <sui-menu tiny vertical>
+    <sui-menu-item active link>
+      <sui-label teal>1</sui-label>
+      Inbox
+    </sui-menu-item>
+    <sui-menu-item link>
+      <sui-label>51</sui-label>
+      Spam
+    </sui-menu-item>
+    <sui-menu-item link>
+      <sui-label>1</sui-label>
+      Updates
+    </sui-menu-item>
+    <sui-menu-item link>
+      <sui-input icon>
+        <sui-icon value="search" />
+      </sui-input>
+    </sui-menu-item>
+  </sui-menu>
+  <sui-menu small vertical>
+    <sui-menu-item active link>
+      <sui-label teal>1</sui-label>
+      Inbox
+    </sui-menu-item>
+    <sui-menu-item link>
+      <sui-label>51</sui-label>
+      Spam
+    </sui-menu-item>
+    <sui-menu-item link>
+      <sui-label>1</sui-label>
+      Updates
+    </sui-menu-item>
+    <sui-menu-item link>
+      <sui-input icon>
+        <sui-icon value="search" />
+      </sui-input>
+    </sui-menu-item>
+  </sui-menu>
+  <sui-menu large vertical>
+    <sui-menu-item active link>
+      <sui-label teal>1</sui-label>
+      Inbox
+    </sui-menu-item>
+    <sui-menu-item link>
+      <sui-label>51</sui-label>
+      Spam
+    </sui-menu-item>
+    <sui-menu-item link>
+      <sui-label>1</sui-label>
+      Updates
+    </sui-menu-item>
+    <sui-menu-item link>
+      <sui-input icon>
+        <sui-icon value="search" />
+      </sui-input>
+    </sui-menu-item>
+  </sui-menu>
+  <sui-menu big vertical>
+    <sui-menu-item active link>
+      <sui-label teal>1</sui-label>
+      Inbox
+    </sui-menu-item>
+    <sui-menu-item link>
+      <sui-label>51</sui-label>
+      Spam
+    </sui-menu-item>
+    <sui-menu-item link>
+      <sui-label>1</sui-label>
+      Updates
+    </sui-menu-item>
+    <sui-menu-item link>
+      <sui-input icon>
+        <sui-icon value="search" />
+      </sui-input>
+    </sui-menu-item>
+  </sui-menu>
+  <sui-menu massive vertical>
+    <sui-menu-item active link>
+      <sui-label teal>1</sui-label>
+      Inbox
+    </sui-menu-item>
+    <sui-menu-item link>
+      <sui-label>51</sui-label>
+      Spam
+    </sui-menu-item>
+    <sui-menu-item link>
+      <sui-label>1</sui-label>
+      Updates
+    </sui-menu-item>
+    <sui-menu-item link>
+      <sui-input icon>
+        <sui-icon value="search" />
+      </sui-input>
+    </sui-menu-item>
+  </sui-menu>
+</div>`
                   }
                 ]
               },
@@ -882,7 +1063,11 @@ export default {
                 examples: [
                   {
                     code:
-`<div></div>`
+`<sui-menu>
+  <sui-menu-item fitted>No padding whatsoever</sui-menu-item>
+  <sui-menu-item horizontally-fitted>No horizontal padding</sui-menu-item>
+  <sui-menu-item vertically-fitted>No vertical padding</sui-menu-item>
+</sui-menu>`
                   }
                 ]
               },
@@ -892,7 +1077,14 @@ export default {
                 examples: [
                   {
                     code:
-`<div></div>`
+`<sui-menu>
+  <sui-menu-item link>1</sui-menu-item>
+  <sui-menu-item link>2</sui-menu-item>
+  <sui-menu-item link>3</sui-menu-item>
+  <sui-menu-item link>4</sui-menu-item>
+  <sui-menu-item link>5</sui-menu-item>
+  <sui-menu-item link>6</sui-menu-item>
+</sui-menu>`
                   }
                 ]
               }

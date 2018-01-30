@@ -13,7 +13,10 @@ export default {
     },
     disabled: Boolean,
 
-    right: Boolean
+    right: Boolean,
+    fitted: Boolean,
+    horizontallyFitted: Boolean,
+    verticallyFitted: Boolean
   },
   data() {
     return {
@@ -35,6 +38,10 @@ export default {
       if (this.right) retVal.splice(0, 0, 'right')
       if (this.isActive) retVal.splice(0, 0, 'active')
       if (this.disabled) retVal.splice(0, 0, 'disabled')
+
+      if (this.fitted) retVal.splice(0, 0, 'fitted')
+      else if (this.horizontallyFitted) retVal.splice(0, 0, 'horizontally fitted')
+      else if (this.verticallyFitted) retVal.splice(0, 0, 'vertically fitted')
 
       for (let c in this.colorClass) {
         retVal.splice(0, 0, c)
