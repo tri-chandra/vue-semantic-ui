@@ -1,10 +1,11 @@
 <template>
 <div>
-  <div :class="`html ui top attached ${inverted?'inverted':''} segment custom`">
-    <div
+  <div
       v-for="(item, idx) in transformedNote"
       :key="idx"
       class="ui info ignored message">{{item}}</div>
+
+  <div :class="`html ui top attached ${inverted?'inverted':''} segment custom`">
     <preview-result v-model="value"></preview-result>
     <sui-label attached="top" class="custom-label">
       Example

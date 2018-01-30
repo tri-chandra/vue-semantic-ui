@@ -22,6 +22,7 @@ import UiStep from '@/port/elements/UIStep'
 
 //collections
 import UiMenu from '@/port/collections/UIMenu'
+import UiMenuItem from '@/port/collections/UIMenuItem'
 
 //modules
 import UiAccordion from '@/port/modules/UIAccordion'
@@ -65,6 +66,7 @@ export default {
     Vue.component('SuiStep', UiStep)
 
     Vue.component('SuiMenu', UiMenu)
+    Vue.component('SuiMenuItem', UiMenuItem)
 
     Vue.component('SuiAccordion', UiAccordion)
     Vue.component('SuiAccordionTitle', UiAccordionTitle)
