@@ -9,12 +9,12 @@ An attempt to Port jQuery usages in Semantic-ui to Vue. I tried to implement in 
 | ✔ Button        | 🚧 Breadcrumb    | 🚧 Advertisement | ✔ Accordion     | 🚧 Form Validation  |
 | 🚧 Container     | 🚧 Form          | 🚧 Card          | ✔ Checkbox      | 🤞 API              |
 | ✔ Divider       | 🚧 Grid          | 🚧 Comment       | ✔ Dimmer        | 🚧 Visibility       |
-| ✔ Flag          | 🚧 Menu          | 🚧 Feed          | ✔🚧 Dropdown      |                    |
-| ✔🚧 Header        | 🚧 Message       | 🚧 Item          | 🚧 Embed         |                    |
+| ✔ Flag          | ✔🚧 Menu          | 🚧 Feed          | ✔🚧 Dropdown      |                    |
+| ✔ Header        | 🚧 Message       | 🚧 Item          | 🚧 Embed         |                    |
 | ✔ Icon          | 🚧 Table         | 🚧 Statistic     | 🚧 Modal         |                    |
 | ✔ Image         |                 |                 | 🚧 Popup         |                    |
-| ✔🚧 Input         |                 |                 | 🚧 Progress      |                    |
-| ✔🚧 Label         |                 |                 | 🚧 Rating        |                    |
+| ✔ Input         |                 |                 | 🚧 Progress      |                    |
+| ✔ Label         |                 |                 | 🚧 Rating        |                    |
 | ✔ List          |                 |                 | 🚧 Search        |                    |
 | 🚧 Loader        |                 |                 | 🚧 Shape         |                    |
 | 🚧 Rail          |                 |                 | 🚧 Sidebar       |                    |

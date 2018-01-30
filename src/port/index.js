@@ -31,6 +31,8 @@ import UiCheckbox from '@/port/modules/UICheckbox'
 import UiDimmer from '@/port/modules/UIDimmer'
 import UiDropdown from '@/port/modules/UIDropdown'
 import UiDropdownItem from '@/port/modules/UIDropdownItem'
+import UiModal from '@/port/modules/UIModal'
+import UiModalContent from '@/port/modules/UIModalContent'
 
 export default {
   install: function(Vue, options) {
@@ -71,5 +73,7 @@ export default {
     Vue.component('SuiDimmer', UiDimmer)
     Vue.component('SuiDropdown', UiDropdown)
     Vue.component('SuiDropdownItem', UiDropdownItem)
+    Vue.component('SuiModal', UiModal)
+    Vue.component('SuiModalContent', UiModalContent)
   }
 }
