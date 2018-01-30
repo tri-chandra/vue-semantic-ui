@@ -2,7 +2,7 @@
   <div :class="classList">
     <input v-if="exclusive" type="radio" @change="emitChange" v-model="data" :value="value" />
     <input v-else type="checkbox" @change="emitChange" v-model="data" :value="value" />
-    <label>My label</label>
+    <label><slot></slot></label>
   </div>
 </template>
 <script>

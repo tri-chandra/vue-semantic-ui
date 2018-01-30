@@ -1,5 +1,5 @@
 <template>
-<div>
+<div style="margin-left:14px; margin-right:14px">
   <div class="ui masthead vertical segment">
     <sui-header h1>{{wikiContent.title}}
       <sui-header sub base-class="header">{{wikiContent.caption}}</sui-header>
@@ -94,13 +94,13 @@ export default {
   width: auto !important;
   max-width: 960px !important;
 }
-.main >>> h4, p, div {
+/* .main >>> h4, p, div {
   margin-left: 14px;
   margin-right: 14px;
 }
 .main >>> h2 {
   margin-bottom: 28px;
-}
+} */
 .rail {
   padding-left: 1.5em;
   width: 260px;
