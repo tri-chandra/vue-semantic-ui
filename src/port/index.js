@@ -35,6 +35,8 @@ import UiDropdownItem from '@/port/modules/UIDropdownItem'
 import UiModal from '@/port/modules/UIModal'
 import UiModalContent from '@/port/modules/UIModalContent'
 import UiSearch from '@/port/modules/UISearch'
+import UiSearchCategory from '@/port/modules/UISearchCategory'
+import UiSearchResult from '@/port/modules/UISearchResult'
 
 export default {
   install: function(Vue, options) {
@@ -79,5 +81,7 @@ export default {
     Vue.component('SuiModal', UiModal)
     Vue.component('SuiModalContent', UiModalContent)
     Vue.component('SuiSearch', UiSearch)
+    Vue.component('SuiSearchCategory', UiSearchCategory)
+    Vue.component('SuiSearchResult', UiSearchResult)
   }
 }

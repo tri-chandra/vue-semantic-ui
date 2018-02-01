@@ -2,6 +2,10 @@
   <div :class="classList">
     <slot name="label" class="ui label"></slot>
     <input
+      @blur="onBlur"
+      @focus="onFocus"
+      @input="onChanged"
+      :class="{prompt}"
       v-model="model"
       type="text"
       :placeholder="placeholder" />
@@ -34,7 +38,10 @@ export default {
     leftAction: Boolean,
     transparent: Boolean,
     inverted: Boolean,
-    fluid: Boolean
+    fluid: Boolean,
+
+    //SuiSearch
+    prompt: Boolean
   },
   data() {
     return {
@@ -78,6 +85,17 @@ export default {
     },
     model(val) {
       this.$emit('input', val)
+    }
+  },
+  methods: {
+    onBlur(e) {
+      if (this.prompt) this.$parent.$emit('blur', e)
+    },
+    onFocus(e) {
+      if (this.prompt) this.$parent.$emit('focus', e)
+    },
+    onChanged(e) {
+      if (this.prompt) this.$parent.$emit('changed', e)
     }
   },
   mounted() {
