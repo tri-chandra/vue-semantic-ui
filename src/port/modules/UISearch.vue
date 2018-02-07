@@ -1,5 +1,5 @@
 <template>
-  <div class="ui search">
+  <div :class="classList">
     <slot></slot>
     <transition name="slide-fade">
       <div
@@ -7,7 +7,25 @@
         class="results"
         style="display: block !important">
         <slot name="results" :result="data">
-
+          <template v-if="category">
+            <sui-search-category
+              v-for="(item, idx) in data"
+              :key="idx"
+              :label="item.name">
+              <sui-search-result
+                v-for="(it, idx2) in item.results"
+                :key="idx2"
+                :title="it.title"
+                :description="it.description" />
+            </sui-search-category>
+          </template>
+          <template v-else>
+            <sui-search-result
+              v-for="(item, idx) in data"
+              :key="idx"
+              :title="item.title"
+              :description="item.description" />
+          </template>
         </slot>
         <a v-if="$slots.action" class="action">
           <slot name="action"></slot>
@@ -20,7 +38,8 @@
 <script>
 export default {
   props: {
-    value: [Object, Array, String]
+    value: [Object, Array, String],
+    category: Boolean
   },
   data() {
     return {
@@ -29,7 +48,13 @@ export default {
     }
   },
   computed: {
+    classList() {
+      let retVal = ['ui', 'search']
 
+      if (this.category) retVal.splice(1, 0, 'category')
+
+      return retVal
+    }
   },
   methods: {
     onFocus() {
